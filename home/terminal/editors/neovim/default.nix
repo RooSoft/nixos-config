@@ -172,7 +172,7 @@
 
       vim.presence = {
         presence-nvim = {
-          enable = true;
+          enable = false;
           auto_update = true;
           image_text = "The one and only";
           client_id = "793271441293967371";
