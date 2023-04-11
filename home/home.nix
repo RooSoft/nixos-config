@@ -6,7 +6,7 @@ let
 in
   {
     imports = [
-      ./terminal
+      ./terminal/editors/neovim
     ];
 
     nixpkgs.config.allowUnfree = true;
