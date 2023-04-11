@@ -1,3 +1,5 @@
+imports = [ inputs.neovim-flake.nixosModules.hm-module  ];
+
 { lib, config, pkgs, ... }:
 
 let
@@ -34,5 +36,17 @@ in
           file = "p10k.zsh";
         }
       ];
+    };
+
+    programs.neovim-flake = {
+      enable = true;
+
+      settings = {
+        vim.viAlias = false;
+        vim.vimAlias = true;
+        vim.lsp = {
+          enable = true;
+        };
+      };
     };
   }
