@@ -42,15 +42,6 @@
     bat
   ];
 
-  environment.variables = {
-      NIX_LD_LIBRARY_PATH = lib.makeLibraryPath [
-        pkgs.stdenv.cc.cc
-      ];
-      NIX_LD = lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker";
-  };
-
-  programs.nix-ld.enable = true;
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
@@ -58,7 +49,7 @@
     enable = true;
     enableSSHSupport = true;
   };
-  programs.zsh.enable = true;
+#  programs.zsh.enable = true;
 
   services.openssh = {
     enable = true;
