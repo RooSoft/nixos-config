@@ -1,55 +1,83 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
+{ lib, config, pkgs, ... }:
 
-{ inputs, lib, config, pkgs, ... }: {
-  # You can import other home-manager modules here
-  imports = [
-    # If you want to use home-manager modules from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModule
+let
+  unstable = import <nixos-unstable> {};
 
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
-  ];
+in
+  {
+    nixpkgs.config.allowUnfree = true;
 
-  nixpkgs = {
-    # You can add overlays here
-    overlays = [
-      # If you want to use overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
-    ];
-    # Configure your nixpkgs instance
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = (_: true);
+    home = {
+      stateVersion = "22.11";
+      username = "roo";
+      homeDirectory = /home/roo;
+      packages = with pkgs; [
+        htop
+        tmux
+        nodejs-16_x
+        bash
+        unrar-wrapper
+      ];
     };
-  };
 
-  # TODO: Set your username
-  home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
-  };
+    programs.zsh = {
+      enable = true;
+      plugins = [
+        {
+          name = "powerlevel10k";
+          src = pkgs.zsh-powerlevel10k;
+          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        }
+        {
+          name = "powerlevel10k-config";
+          src = lib.cleanSource ./p10k-config;
+          file = "p10k.zsh";
+        }
+      ];
+    };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+    programs.neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+      plugins = with pkgs.vimPlugins;
+      let
+      in [
+        vim-nix
+        gruvbox-community
+        nvim-tree-lua
+        nvim-web-devicons
+        telescope-nvim
+        telescope-fzf-native-nvim
+        vim-elixir
+      ];
+      extraConfig = ''
+        syntax on
 
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.git.enable = true;
+        set mouse=a
+        set number
 
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
+        set tabstop=2
+        set shiftwidth=2
+        set softtabstop=2
+        set expandtab
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "22.11";
-}
+        set termguicolors
+
+        let mapleader=" "
+        let maplocalleader=" "
+
+        " Find files using Telescope command-line sugar.
+        nnoremap <leader>ff <cmd>Telescope find_files<cr>
+        nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+        nnoremap <leader>fb <cmd>Telescope buffers<cr>
+        nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+        " Using Lua functions
+        nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+        nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+        nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+        nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+      '';
+    };
+  }
