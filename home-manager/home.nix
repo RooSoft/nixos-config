@@ -6,7 +6,7 @@ let
 in
   {
     imports = [
-      inputs.neovim-flake.homeManagerModules.default
+      ./terminal
     ];
 
     nixpkgs.config.allowUnfree = true;
@@ -38,17 +38,5 @@ in
           file = "p10k.zsh";
         }
       ];
-    };
-
-    programs.neovim-flake = {
-      enable = true;
-
-      settings = {
-        vim.viAlias = false;
-        vim.vimAlias = true;
-        vim.lsp = {
-          enable = true;
-        };
-      };
     };
   }
