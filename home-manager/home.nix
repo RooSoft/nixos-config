@@ -1,12 +1,11 @@
-imports = [ inputs.neovim-flake.nixosModules.hm-module  ];
-
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, neovim-flake, ... }:
 
 let
   unstable = import <nixos-unstable> {};
 
 in
   {
+    imports = [ neovim-flake.homeManagerModules.default ];
     nixpkgs.config.allowUnfree = true;
 
     home = {
