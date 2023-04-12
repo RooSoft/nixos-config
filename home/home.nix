@@ -2,11 +2,10 @@
   lib,
   config,
   pkgs,
+  pkgs_unstable,
   inputs,
   ...
-}: let
-  unstable = import <nixos-unstable> {};
-in {
+}: {
   imports = [
     ./terminal/editors/neovim
     ./terminal/shells/zsh
@@ -24,8 +23,8 @@ in {
       nodejs-16_x
       bash
       unrar-wrapper
-      unstable.elixir_1_14
-      unstable.elixir_ls
+      pkgs_unstable.elixir_1_14
+      pkgs_unstable.elixir_ls
     ];
   };
 }

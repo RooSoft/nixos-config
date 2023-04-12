@@ -992,6 +992,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_unstable": {
+      "locked": {
+        "lastModified": 1681217261,
+        "narHash": "sha256-RbxCHWN3Vhyv/WEsXcJlDwF7bpvZ9NxDjfSouQxXEKo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3fb8eedc450286d5092e4953118212fa21091b3b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nmd": {
       "flake": false,
       "locked": {
@@ -1433,7 +1449,8 @@
       "inputs": {
         "home-manager": "home-manager",
         "neovim-flake": "neovim-flake",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_4",
+        "nixpkgs_unstable": "nixpkgs_unstable"
       }
     },
     "rust-overlay": {
