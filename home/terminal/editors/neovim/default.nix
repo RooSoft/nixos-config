@@ -118,7 +118,7 @@
       };
 
       vim.minimap = {
-        minimap-vim.enable = false;
+        minimap-vim.enable = true;
         codewindow.enable = true; # lighter, faster, and uses lua for configuration
       };
 
