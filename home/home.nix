@@ -24,6 +24,8 @@ in {
       nodejs-16_x
       bash
       unrar-wrapper
+      unstable.elixir_1_14
+      unstable.elixir_ls
     ];
   };
 }
