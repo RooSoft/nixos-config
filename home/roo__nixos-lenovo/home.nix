@@ -25,6 +25,7 @@
       unrar-wrapper
       pkgs_unstable.elixir_1_14
       pkgs_unstable.elixir_ls
+      rnix-lsp
     ];
   };
 }
