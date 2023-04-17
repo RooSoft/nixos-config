@@ -54,12 +54,12 @@
       "roo@nixos-mini" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs pkgs_unstable;}; # Pass flake inputs to our config
-        modules = [./home/home.nix];
+        modules = [./home/roo__nixos-mini/home.nix];
       };
       "roo@nixos-lenovo" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs pkgs_unstable;}; # Pass flake inputs to our config
-        modules = [./home/home.nix];
+        modules = [./home/roo__nixos-lenovo/home.nix];
       };
     };
   };
