@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    ./terminal/editors/neovim
+    #    ./terminal/editors/neovim
     ./terminal/shells/zsh
   ];
 
@@ -25,6 +25,8 @@
       unrar-wrapper
       pkgs_unstable.elixir_1_14
       pkgs_unstable.elixir_ls
+      rnix-lsp
+      inputs.neovim-flake.packages.x86_64-linux.default
     ];
   };
 }
