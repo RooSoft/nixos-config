@@ -39,12 +39,12 @@
       nixos-mini = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;}; # Pass flake inputs to our config
         # > Our main nixos configuration file <
-        modules = [./nixos/nixos-mini/configuration.nix];
+        modules = [./machines/nixos-mini/configuration.nix];
       };
       nixos-lenovo = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;}; # Pass flake inputs to our config
         # > Our main nixos configuration file <
-        modules = [./nixos/nixos-lenovo/configuration.nix];
+        modules = [./machines/nixos-lenovo/configuration.nix];
       };
     };
 
@@ -54,13 +54,13 @@
       "roo@nixos-mini" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs pkgs_unstable;}; # Pass flake inputs to our config
-        modules = [./nixos/nixos-mini/users/roo/home.nix];
+        modules = [./machines/nixos-mini/users/roo/home.nix];
       };
       "roo@nixos-lenovo" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
         extraSpecialArgs = {inherit inputs pkgs_unstable;}; # Pass flake inputs to our config
-        modules = [./nixos/nixos-lenovo/users/roo/home.nix];
+        modules = [./machines/nixos-lenovo/users/roo/home.nix];
       };
     };
   };
