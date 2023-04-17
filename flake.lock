@@ -28,11 +28,11 @@
         "nixpkgs_unstable": "nixpkgs_unstable"
       },
       "locked": {
-        "lastModified": 1681771256,
-        "narHash": "sha256-AArYhTMA1oUEz05+ICPSMRaIrdQ9e/Oq1LbXIKc9PDk=",
+        "lastModified": 1681771877,
+        "narHash": "sha256-fDp2Upx678uwKFjwQt4wWMcpQHjCE4q4o6O7amf00as=",
         "owner": "roosoft",
         "repo": "neovim-flake",
-        "rev": "fb657d1fd53be3ba03a3e7aca25ef840862186b0",
+        "rev": "b04f115b6636cd62b8ea0c19e4bd6bf4ee576847",
         "type": "github"
       },
       "original": {
