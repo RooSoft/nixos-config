@@ -1,13 +1,11 @@
-{
-  lib,
-  config,
-  pkgs,
-  pkgs_unstable,
-  inputs,
-  ...
+{ lib
+, config
+, pkgs
+, pkgs_unstable
+, inputs
+, ...
 }: {
   imports = [
-    #    ./terminal/editors/neovim
     ./terminal/shells/zsh
   ];
 
