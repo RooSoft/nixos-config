@@ -4,10 +4,11 @@
   pkgs,
   pkgs_unstable,
   inputs,
+  neovim-flake,
   ...
 }: {
   imports = [
-    ./terminal/editors/neovim
+    #    ./terminal/editors/neovim
     ./terminal/shells/zsh
   ];
 
@@ -26,6 +27,7 @@
       pkgs_unstable.elixir_1_14
       pkgs_unstable.elixir_ls
       rnix-lsp
+      inputs.neovim-flake.packages.x86_64-linux.default
     ];
   };
 }

@@ -17,7 +17,7 @@
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
     neovim-flake = {
-      url = "github:notashelf/neovim-flake";
+      url = "github:roosoft/neovim-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -58,6 +58,7 @@
       };
       "roo@nixos-lenovo" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
         extraSpecialArgs = {inherit inputs pkgs_unstable;}; # Pass flake inputs to our config
         modules = [./home/roo__nixos-lenovo/home.nix];
       };
