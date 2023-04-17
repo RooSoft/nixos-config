@@ -25,7 +25,7 @@
   users.users.roo = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
+    packages = [
     ];
     shell = pkgs.zsh;
   };
