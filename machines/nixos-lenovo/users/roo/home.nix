@@ -8,7 +8,6 @@
   ...
 }: {
   imports = [
-    #    ./terminal/editors/neovim
     ./terminal/shells/zsh
   ];
 
