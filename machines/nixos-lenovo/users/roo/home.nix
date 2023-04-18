@@ -2,9 +2,7 @@
   lib,
   config,
   pkgs,
-  pkgs_unstable,
   inputs,
-  neovim-flake,
   ...
 }: {
   imports = [
@@ -23,10 +21,10 @@
       nodejs-16_x
       bash
       unrar-wrapper
-      pkgs_unstable.elixir_1_14
-      pkgs_unstable.elixir_ls
+      elixir_1_14
+      elixir_ls
       rnix-lsp
-      inputs.neovim-flake.packages.x86_64-linux.default
+      inputs.neovim-flake.packages.x86_64-linux
     ];
   };
 }
