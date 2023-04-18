@@ -6,6 +6,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     nixpkgs_unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    darwin.url = "github:lnl7/nix-darwin/master";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -29,6 +32,7 @@
     nixpkgs_unstable,
     home-manager,
     flake-utils,
+    darwin,
     ...
   } @ inputs: flake-utils.lib.eachDefaultSystem (system: let
     pkgs_unstable = import nixpkgs_unstable {
@@ -49,7 +53,11 @@
         # > Our main nixos configuration file <
         modules = [./machines/nixos-lenovo/configuration.nix];
       };
-      macOS = nixpkgs.lib.nixosSystem {
+    };
+
+    darwinConfigurations = {
+      macOS = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
         specialArgs = {inherit inputs;}; # Pass flake inputs to our config
         # > Our main nixos configuration file <
         modules = [./machines/macOS/darwin-configuration.nix];
