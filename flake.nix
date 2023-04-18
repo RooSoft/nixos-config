@@ -27,6 +27,7 @@
     home-manager,
     flake-utils,
     darwin,
+    neovim-flake,
     ...
   } @ inputs: let
     pkgs_unstable = system: import nixpkgs_unstable {
