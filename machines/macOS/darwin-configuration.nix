@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # List packages installed in system profile. To search by name, run:
@@ -7,6 +7,7 @@
   [ 
     vim
     rnix-lsp
+    inputs.neovim-flake.packages.aarch64-darwin
   ];
 
   # Use a custom configuration.nix location.

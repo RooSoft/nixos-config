@@ -28,8 +28,8 @@
     flake-utils,
     darwin,
     ...
-  } @ inputs: flake-utils.lib.eachDefaultSystem (system: let
-    pkgs_unstable = import nixpkgs_unstable {
+  } @ inputs: let
+    pkgs_unstable = system: import nixpkgs_unstable {
       system = system;
       config.allowUnfreePredicate = true;
     };
@@ -50,8 +50,11 @@
     };
 
     darwinConfigurations = {
-      macOS = darwin.lib.darwinSystem {
+      builder = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
+        pkgs = import nixpkgs {
+          system = "aarch64-darwin";
+        };
         specialArgs = {inherit inputs;}; # Pass flake inputs to our config
         # > Our main nixos configuration file <
         modules = [./machines/macOS/darwin-configuration.nix];
@@ -60,18 +63,20 @@
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
+    homeConfigurations = let
+      pkgs = pkgs_unstable "x86_64-linux";
+    in {
       "roo@nixos-mini" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        extraSpecialArgs = {inherit inputs pkgs_unstable;}; # Pass flake inputs to our config
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        extraSpecialArgs = {inherit inputs pkgs;}; # Pass flake inputs to our config
         modules = [./machines/nixos-mini/users/roo/home.nix];
       };
       "roo@nixos-lenovo" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
-        extraSpecialArgs = {inherit inputs pkgs_unstable;}; # Pass flake inputs to our config
+        extraSpecialArgs = {inherit inputs pkgs;}; # Pass flake inputs to our config
         modules = [./machines/nixos-lenovo/users/roo/home.nix];
       };
     };
-  });
+  };
 }
