@@ -10,6 +10,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    flake-utils.url = "github:numtide/flake-utils";
+
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
@@ -26,10 +28,11 @@
     nixpkgs,
     nixpkgs_unstable,
     home-manager,
+    flake-utils,
     ...
-  } @ inputs: let
+  } @ inputs: flake-utils.lib.eachDefaultSystem (system: let
     pkgs_unstable = import nixpkgs_unstable {
-      system = "x86_64-linux";
+      system = system;
       config.allowUnfreePredicate = true;
     };
   in {
@@ -46,22 +49,27 @@
         # > Our main nixos configuration file <
         modules = [./machines/nixos-lenovo/configuration.nix];
       };
+      macOS = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;}; # Pass flake inputs to our config
+        # > Our main nixos configuration file <
+        modules = [./machines/macOS/darwin-configuration.nix];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       "roo@nixos-mini" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {inherit inputs pkgs_unstable;}; # Pass flake inputs to our config
         modules = [./machines/nixos-mini/users/roo/home.nix];
       };
       "roo@nixos-lenovo" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = nixpkgs.legacyPackages.${system};
 
         extraSpecialArgs = {inherit inputs pkgs_unstable;}; # Pass flake inputs to our config
         modules = [./machines/nixos-lenovo/users/roo/home.nix];
       };
     };
-  };
+  });
 }
