@@ -27,6 +27,7 @@
   system.stateVersion = 4;
 
   nix.extraOptions = ''
+    build-users-group = nixbld
     experimental-features = nix-command flakes
   '';
 }
