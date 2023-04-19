@@ -15,8 +15,25 @@
     };
   };
 
+  home.sessionVariables.TEST = 43;
+
   programs = {
     bat.enable = true;
     bat.config.theme = "TwoDark";
+
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      enableSyntaxHighlighting = true;
+      shellAliases = {
+        ls = "ls --color=auto -F"; 
+      };
+      sessionVariables = {
+        TEST = 33;
+      };
+    };
+
+    starship.enable = true;
+    starship.enableZshIntegration = true;
   };
 }
