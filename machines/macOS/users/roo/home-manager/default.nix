@@ -1,4 +1,5 @@
 { pkgs, ... } : {
+  # options docs found here: https://nix-community.github.io/home-manager/options.html
   home = {
     stateVersion = "22.11";
 
