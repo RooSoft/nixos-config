@@ -1,21 +1,16 @@
-{ pkgs, ... } : {
-  # options docs found here: https://nix-community.github.io/home-manager/options.html
+# options docs found here: https://nix-community.github.io/home-manager/options.html
+
+{ pkgs, ... } : 
+{
   home = {
     stateVersion = "22.11";
 
     packages = with pkgs; [
       ripgrep
-      curl
-      less
+        curl
+        less
     ];
-
-    sessionVariables = {
-      CLICOLOR = 1;
-      EDITOR = "nvim";
-    };
   };
-
-  home.sessionVariables.TEST = 43;
 
   programs = {
     bat.enable = true;
@@ -27,13 +22,21 @@
       enableSyntaxHighlighting = true;
       shellAliases = {
         ls = "ls --color=auto -F"; 
+        update-system = "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
       };
       sessionVariables = {
-        TEST = 33;
+        CLICOLOR = 1;
+        EDITOR = "nvim";
       };
     };
 
-    starship.enable = true;
-    starship.enableZshIntegration = true;
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+
+      settings = {
+      };
+    };
   };
 }
+
