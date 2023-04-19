@@ -45,13 +45,14 @@
 
         palettes.foo = {
           mustard = "#af8700";
+          turquoise = "#156760";
         };
 
         fill.symbol = " ";
 
         username = {
           show_always = true;
-          style_user = "mustard bold";
+          style_user = "turquoise bold";
           style_root = "bright-red bold";
           format = "[$user]($style)";
         };
@@ -59,7 +60,7 @@
         hostname = {
           ssh_only = false;
           ssh_symbol = " 📞";
-          style = "mustard bold";
+          style = "turquoise bold";
           format = "@[$hostname]($style)$ssh_symbol ";
         };
 
