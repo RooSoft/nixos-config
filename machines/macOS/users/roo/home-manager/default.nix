@@ -79,21 +79,52 @@
           format = "[$time]($style)";
         };
 
-        format = lib.concatStrings[
+        cmd_duration = {
+          style = "mustard bold";
+        };
+
+        jobs = {
+          format = "[$number$symbol]($style)";
+          symbol = "⚙ ";
+          style = "mustard bold";
+        };
+
+        format = let
+          who = [
           "$username" 
-          "$hostname"
-          "$directory"
+            "$hostname"
+            "$directory"
+          ];
+
+        git = [
           "$git_branch"
-          "$git_state"
-          "$git_status"
-          "$git_metrics"
-          "$fill"
+            "$git_state"
+            "$git_status"
+            "$git_metrics"
+        ];
+
+        fill = [ "$fill" ];
+
+        duration = [
           "$cmd_duration"
+        ];
+
+        time = [
           "$jobs"
-          "$time"
+            "$time"
+        ];
+
+        languages = [
+          "$nix_shell"
+            "$nodejs"
+            "$elixir"
+        ];
+
+        prompt = [ 
           "$line_break"
           "❯ " 
         ];
+        in lib.concatStrings(who ++ git ++ fill ++ duration ++ languages ++ time ++ prompt);
       };
     };
   };
