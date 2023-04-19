@@ -58,7 +58,16 @@
         };
         specialArgs = {inherit inputs;}; # Pass flake inputs to our config
         # > Our main nixos configuration file <
-        modules = [./machines/macOS/darwin-configuration.nix];
+        modules = [
+          ./machines/macOS/darwin-configuration.nix
+          home-manager.darwinModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.roo.imports = [ ./machines/macOS/users/roo/home-manager ];
+            };
+          }
+        ];
       };
     };
 
