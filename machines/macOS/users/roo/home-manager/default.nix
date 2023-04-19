@@ -31,7 +31,6 @@
     };
 
     starship = import ./starship.nix { lib = lib; };
-
   };
 }
 

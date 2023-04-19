@@ -9,6 +9,8 @@
     palettes.foo = {
       mustard = "#af8700";
       turquoise = "#156760";
+      deleted = "#903030";
+      added = "#106010";
     };
 
     fill.symbol = " ";
@@ -34,7 +36,12 @@
       read_only = "🔒 ";
     };
 
-    git_metrics.disabled = false;
+    git_metrics = {
+      disabled = false;
+      added_style = "added bold";
+      deleted_style = "deleted bold";
+    };
+
     git_status.style = "";
 
     time = {
