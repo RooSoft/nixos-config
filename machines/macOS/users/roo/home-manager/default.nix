@@ -10,12 +10,6 @@
         curl
         less
     ];
-
-    sessionVariables = {
-      SPACESHIP_HOST_SHOW = "always";
-      SPACESHIP_USER_SHOW = "always";
-      SPACESHIP_TIME_SHOW = "always";
-    };
   };
 
   programs = {
