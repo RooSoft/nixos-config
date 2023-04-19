@@ -8,16 +8,19 @@
 
     palettes.foo = {
       mustard = "#af8700";
-      turquoise = "#156760";
-      deleted = "#903030";
-      added = "#106010";
+      time = "#778485";
+      directory = "#A7A5AB";
+      identity = "#778485";
+      git_branch = "#778485";
+      deleted = "#a05050";
+      added = "#208020";
     };
 
     fill.symbol = " ";
 
     username = {
       show_always = true;
-      style_user = "turquoise bold";
+      style_user = "identity bold";
       style_root = "bright-red bold";
       format = "[$user]($style)";
     };
@@ -25,7 +28,7 @@
     hostname = {
       ssh_only = false;
       ssh_symbol = " 📞";
-      style = "turquoise bold";
+      style = "identity bold";
       format = "@[$hostname]($style)$ssh_symbol ";
     };
 
@@ -34,6 +37,12 @@
       truncate_to_repo = false;
       format = "[$read_only]($read_only_style)[$path]($style) ";
       read_only = "🔒 ";
+      style = "directory bold";
+    };
+
+    git_branch =  {
+      style = "git_branch bold";
+      format = "[$symbol$branch(:$remote_branch)]($style) ";
     };
 
     git_metrics = {
@@ -47,10 +56,12 @@
     time = {
       disabled = false;
       format = "[$time]($style)";
+      style = "time bold";
     };
 
     cmd_duration = {
       style = "mustard bold";
+      format = "[$duration]($style) ";
     };
 
     jobs = {
@@ -61,7 +72,7 @@
 
     format = let
       who = [
-      "$username" 
+      "$username"
         "$hostname"
         "$directory"
       ];
@@ -88,7 +99,9 @@
       "$nix_shell"
         "$nodejs"
         "$elixir"
+        "$lua"
     ];
+
 
     prompt = [ 
       "$line_break"
