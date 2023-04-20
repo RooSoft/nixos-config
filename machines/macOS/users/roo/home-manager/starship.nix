@@ -1,4 +1,4 @@
-{ lib, ... } : 
+{ lib, ... }:
 {
   enable = true;
   enableZshIntegration = true;
@@ -40,7 +40,7 @@
       style = "directory bold";
     };
 
-    git_branch =  {
+    git_branch = {
       style = "git_branch bold";
       format = "[$symbol$branch(:$remote_branch)]($style) ";
     };
@@ -70,43 +70,45 @@
       style = "mustard bold";
     };
 
-    format = let
-      who = [
-      "$username"
-        "$hostname"
-        "$directory"
-      ];
+    format =
+      let
+        who = [
+          "$username"
+          "$hostname"
+          "$directory"
+        ];
 
-    git = [
-      "$git_branch"
-        "$git_state"
-        "$git_status"
-        "$git_metrics"
-    ];
+        git = [
+          "$git_branch"
+          "$git_state"
+          "$git_status"
+          "$git_metrics"
+        ];
 
-    fill = [ "$fill" ];
+        fill = [ "$fill" ];
 
-    duration = [
-      "$cmd_duration"
-    ];
+        duration = [
+          "$cmd_duration"
+        ];
 
-    time = [
-      "$jobs"
-        "$time"
-    ];
+        time = [
+          "$jobs"
+          "$time"
+        ];
 
-    languages = [
-      "$nix_shell"
-        "$nodejs"
-        "$elixir"
-        "$lua"
-    ];
+        languages = [
+          "$nix_shell"
+          "$nodejs"
+          "$elixir"
+          "$lua"
+        ];
 
 
-    prompt = [ 
-      "$line_break"
-      "❯ " 
-    ];
-    in lib.concatStrings(who ++ git ++ fill ++ duration ++ languages ++ time ++ prompt);
+        prompt = [
+          "$line_break"
+          "❯ "
+        ];
+      in
+      lib.concatStrings (who ++ git ++ fill ++ duration ++ languages ++ time ++ prompt);
   };
 }
