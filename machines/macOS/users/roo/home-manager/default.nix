@@ -9,6 +9,14 @@
       ripgrep
         curl
         less
+        htop
+        tmux
+        nodejs-16_x
+        bash
+        unrar-wrapper
+        elixir_1_14
+        elixir_ls
+        rnix-lsp
     ];
   };
 
