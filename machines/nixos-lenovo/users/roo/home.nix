@@ -3,10 +3,14 @@
   config,
   pkgs,
   inputs,
+  modulesFolder,
   ...
 }: {
-  imports = [
+  imports = let
+    starshipModulePath = modulesFolder + "/starship.nix";
+  in [
     ./terminal/shells/zsh
+    starshipModulePath
   ];
 
   nixpkgs.config.allowUnfree = true;
