@@ -2,11 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, modulesFolder, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -24,6 +25,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
+
     ];
     shell = pkgs.zsh;
   };
@@ -42,14 +44,24 @@
     bat
   ];
 
+  programs =
+    let
+      starshipModulePath = modulesFolder + "/starship.nix";
+    in
+    {
+      mtr.enable = true;
+
+      gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+      };
+
+      starship = import starshipModulePath { lib = lib; };
+    };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-#  programs.zsh.enable = true;
+  #  programs.zsh.enable = true;
 
   services.openssh = {
     enable = true;
