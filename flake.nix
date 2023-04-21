@@ -42,12 +42,10 @@
       nixosConfigurations = {
         nixos-mini = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
-          extraSpecialArgs = { modulesFolder = ./modules; };
           modules = [ ./machines/nixos-mini/configuration.nix ];
         };
         nixos-lenovo = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; }; # Pass flake inputs to our config
-          extraSpecialArgs = { modulesFolder = ./modules; };
           modules = [ ./machines/nixos-lenovo/configuration.nix ];
         };
       };
@@ -86,13 +84,13 @@
         {
           "roo@nixos-mini" = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages."x86_64-linux";
-            extraSpecialArgs = { inherit inputs pkgs; }; # Pass flake inputs to our config
+            extraSpecialArgs = { inherit inputs pkgs; modulesFolder = ./modules; }; # Pass flake inputs to our config
             modules = [ ./machines/nixos-mini/users/roo/home.nix ];
           };
           "roo@nixos-lenovo" = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
-            extraSpecialArgs = { inherit inputs pkgs; }; # Pass flake inputs to our config
+            extraSpecialArgs = { inherit inputs pkgs; modulesFolder = ./modules; }; # Pass flake inputs to our config
             modules = [ ./machines/nixos-lenovo/users/roo/home.nix ];
           };
         };
