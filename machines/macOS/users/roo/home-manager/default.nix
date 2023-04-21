@@ -1,6 +1,6 @@
 # options docs found here: https://nix-community.github.io/home-manager/options.html
 
-{ pkgs, lib, ... } : 
+{ pkgs, lib, modulesFolder, ... } : 
 {
   home = {
     stateVersion = "22.11";
@@ -20,7 +20,9 @@
     ];
   };
 
-  programs = {
+  programs = let
+    starshipModulePath = modulesFolder + "/starship.nix";
+  in {
     bat.enable = true;
     bat.config.theme = "TwoDark";
 
@@ -38,7 +40,7 @@
       };
     };
 
-    starship = import ./starship.nix { lib = lib; };
+    starship = import starshipModulePath { lib = lib; };
   };
 }
 

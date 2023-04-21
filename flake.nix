@@ -56,7 +56,7 @@
         pkgs = import nixpkgs {
           system = "aarch64-darwin";
         };
-        specialArgs = {inherit inputs;}; # Pass flake inputs to our config
+        specialArgs = {inherit inputs; modulesFolder = ./modules;}; # Pass flake inputs to our config
         # > Our main nixos configuration file <
         modules = [
           ./machines/macOS/darwin-configuration.nix
@@ -64,7 +64,10 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.roo.imports = [ ./machines/macOS/users/roo/home-manager ];
+              extraSpecialArgs = { modulesFolder = ./modules; };
+              users.roo = {
+                imports = [ ./machines/macOS/users/roo/home-manager ];
+              };
             };
           }
         ];
