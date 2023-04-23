@@ -23,6 +23,7 @@ in
       nodejs-16_x
       elixir_1_14
       elixir_ls
+      rebar3
       rnix-lsp
       postgresql_15
       inputs.neovim-flake.packages.x86_64-linux
