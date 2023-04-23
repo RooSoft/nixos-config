@@ -84,7 +84,7 @@
         {
           "roo@nixos-mini" = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages."x86_64-linux";
-            extraSpecialArgs = { inherit inputs pkgs; modulesFolder = ./modules; }; # Pass flake inputs to our config
+            extraSpecialArgs = { inherit inputs pkgs; commonFolder = ./common; }; # Pass flake inputs to our config
             modules = [ ./machines/nixos-mini/users/roo/home.nix ];
           };
           "roo@nixos-lenovo" = home-manager.lib.homeManagerConfiguration {
