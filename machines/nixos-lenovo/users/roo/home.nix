@@ -1,4 +1,4 @@
-{ lib, pkgs , inputs , commonFolder , ... }:
+{ lib, pkgs, inputs, commonFolder, ... }:
 let
   defaultHomePackagesPath = commonFolder + "/defaultHomePackages.nix";
 
@@ -24,6 +24,7 @@ in
       elixir_1_14
       elixir_ls
       rnix-lsp
+      postgresql_15
       inputs.neovim-flake.packages.x86_64-linux
     ];
   };

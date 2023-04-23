@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -51,12 +52,27 @@
     enable = true;
     enableSSHSupport = true;
   };
-#  programs.zsh.enable = true;
+  #  programs.zsh.enable = true;
 
   services.openssh = {
     enable = true;
     passwordAuthentication = true;
     permitRootLogin = "yes";
+  };
+
+  services.postgresql = {
+    enable = true;
+    enableTCPIP = true;
+    port = 5432;
+    package = pkgs.postgresql_15;
+
+    ensureDatabases = [ "roo" ];
+    ensureUsers = [{
+      name = "roo";
+      ensurePermissions = {
+        "DATABASE roo" = "ALL PRIVILEGES";
+      };
+    }];
   };
 
   # Open ports in the firewall.
