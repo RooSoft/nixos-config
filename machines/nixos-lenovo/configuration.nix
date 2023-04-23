@@ -69,10 +69,13 @@
     ensureDatabases = [ "roo" ];
     ensureUsers = [{
       name = "roo";
-      ensurePermissions = {
-        "DATABASE roo" = "ALL PRIVILEGES";
-      };
     }];
+
+    initialScript = pkgs.writeText "backend-initScript" ''
+      CREATE ROLE roo WITH LOGIN PASSWORD 'roo' CREATEDB;
+      CREATE DATABASE roo;
+      GRANT ALL PRIVILEGES ON DATABASE roo TO roo;
+    '';
   };
 
   # Open ports in the firewall.
