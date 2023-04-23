@@ -8,13 +8,22 @@
   imports =
     let
       starshipModulePath = modulesFolder + "/starship.nix";
+      zshModulePath = modulesFolder + "/zsh.nix";
     in
     [
-      ./terminal/shells/zsh
+      zshModulePath
       starshipModulePath
     ];
 
   nixpkgs.config.allowUnfree = true;
+
+  programs.zsh = {
+    shellAliases = {
+      update-system = "sudo nixos-rebuild switch --flake ~/.config/nixpkgs/.#nixos-lenovo";
+      update-user = "home-manager switch --flake ~/.config/nixpkgs/.#roo@nixos-lenovo";
+      update-flake = "nix flake update ~/.config/nixpkgs/#";
+    };
+  };
 
   home = {
     stateVersion = "22.11";
