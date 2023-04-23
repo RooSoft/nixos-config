@@ -1,20 +1,29 @@
+{ lib, pkgs , inputs , modulesFolder , ... }:
+let
+  starshipModulePath = modulesFolder + "/starship.nix";
+  zshModulePath = modulesFolder + "/zsh.nix";
+  defaultHomePackagesPath = modulesFolder + "/defaultHomePackages.nix";
+in
 {
-  lib,
-  config,
-  pkgs,
-  inputs,
-  modulesFolder,
-  ...
-}: {
-  imports = let
-    starshipModulePath = modulesFolder + "/starship.nix";
-    zshModulePath = modulesFolder + "/zsh.nix";
-  in [
+  imports = [
     zshModulePath
     starshipModulePath
   ];
 
   nixpkgs.config.allowUnfree = true;
+
+  home = {
+    stateVersion = "22.11";
+    username = "roo";
+    homeDirectory = /home/roo;
+    packages = with pkgs; (import defaultHomePackagesPath { pkgs = pkgs; }) ++ [
+      nodejs-16_x
+      elixir_1_14
+      elixir_ls
+      rnix-lsp
+      inputs.neovim-flake.packages.x86_64-linux
+    ];
+  };
 
   programs.zsh = {
     shellAliases = {
@@ -22,22 +31,5 @@
       update-user = "home-manager switch --flake ~/.config/nixpkgs/.#roo@nixos-lenovo";
       update-flake = "nix flake update ~/.config/nixpkgs/#";
     };
-  };
-
-  home = {
-    stateVersion = "22.11";
-    username = "roo";
-    homeDirectory = /home/roo;
-    packages = with pkgs; [
-      htop
-      tmux
-      nodejs-16_x
-      bash
-      unrar-wrapper
-      elixir_1_14
-      elixir_ls
-      rnix-lsp
-      inputs.neovim-flake.packages.x86_64-linux
-    ];
   };
 }
