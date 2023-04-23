@@ -1,46 +1,37 @@
-# options docs found here: https://nix-community.github.io/home-manager/options.html
-
 { pkgs, lib, modulesFolder, ... }:
+let
+  starshipModulePath = modulesFolder + "/starship.nix";
+  zshModulePath = modulesFolder + "/zsh.nix";
+  defaultHomePackagesPath = modulesFolder + "/defaultHomePackages.nix";
+in
 {
+  imports =
+    [
+      starshipModulePath
+      zshModulePath
+    ];
+
   home = {
     stateVersion = "22.11";
 
-    packages = with pkgs; [
-      ripgrep
-      curl
-      less
-      htop
-      tmux
+    packages = with pkgs; (import defaultHomePackagesPath { pkgs = pkgs; }) ++ [
       nodejs-16_x
-      bash
-      unrar-wrapper
       elixir_1_14
       elixir_ls
       rnix-lsp
     ];
   };
 
-  imports =
-    let
-      starshipModulePath = modulesFolder + "/starship.nix";
-      zshModulePath = modulesFolder + "/zsh.nix";
-    in
-    [
-      starshipModulePath
-      zshModulePath
-    ];
+  programs = {
+    bat.enable = true;
+    bat.config.theme = "TwoDark";
 
-  programs =
-    {
-      bat.enable = true;
-      bat.config.theme = "TwoDark";
-
-      zsh = {
-        shellAliases = {
-          ls = "ls --color=auto -F";
-          update-system = "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
-        };
+    zsh = {
+      shellAliases = {
+        ls = "ls --color=auto -F";
+        update-system = "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
       };
     };
+  };
 }
 
