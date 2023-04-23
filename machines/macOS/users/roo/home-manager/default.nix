@@ -1,8 +1,11 @@
-{ pkgs, lib, modulesFolder, ... }:
+{ pkgs, lib, commonFolder, ... }:
 let
+  defaultHomePackagesPath = commonFolder + "/defaultHomePackages.nix";
+
+  modulesFolder = commonFolder + "/modules";
+
   starshipModulePath = modulesFolder + "/starship.nix";
   zshModulePath = modulesFolder + "/zsh.nix";
-  defaultHomePackagesPath = modulesFolder + "/defaultHomePackages.nix";
 in
 {
   imports =

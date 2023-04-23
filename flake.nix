@@ -65,7 +65,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = { modulesFolder = ./modules; };
+                extraSpecialArgs = { commonFolder = ./common; };
                 users.roo = {
                   imports = [ ./machines/macOS/users/roo/home-manager ];
                 };
