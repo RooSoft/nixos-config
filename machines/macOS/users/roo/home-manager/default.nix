@@ -23,9 +23,11 @@
   imports =
     let
       starshipModulePath = modulesFolder + "/starship.nix";
+      zshModulePath = modulesFolder + "/zsh.nix";
     in
     [
       starshipModulePath
+      zshModulePath
     ];
 
   programs =
@@ -34,16 +36,9 @@
       bat.config.theme = "TwoDark";
 
       zsh = {
-        enable = true;
-        enableCompletion = true;
-        enableSyntaxHighlighting = true;
         shellAliases = {
           ls = "ls --color=auto -F";
           update-system = "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
-        };
-        sessionVariables = {
-          CLICOLOR = 1;
-          EDITOR = "nvim";
         };
       };
     };
