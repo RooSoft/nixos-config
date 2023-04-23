@@ -2,13 +2,12 @@
 let
   starshipModulePath = modulesFolder + "/starship.nix";
   zshModulePath = modulesFolder + "/zsh.nix";
-  defaultHomePackages = modulesFolder + "/defaultHomePackages.nix";
+  defaultHomePackagesPath = modulesFolder + "/defaultHomePackages.nix";
 in
 {
   imports = [
     zshModulePath
     starshipModulePath
-    defaultHomePackages
   ];
 
   nixpkgs.config.allowUnfree = true;
