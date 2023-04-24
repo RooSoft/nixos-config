@@ -9,5 +9,5 @@ with pkgs; [
   curl
   less
   unrar-wrapper
-  inotify-tools
+  gnupg
 ]

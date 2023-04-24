@@ -27,6 +27,7 @@ in
       rnix-lsp
       postgresql_15
       inputs.neovim-flake.packages.x86_64-linux
+      inotify-tools
     ];
   };
 

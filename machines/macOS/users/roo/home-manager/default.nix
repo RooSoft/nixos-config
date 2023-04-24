@@ -22,6 +22,7 @@ in
       elixir_1_14
       elixir_ls
       rnix-lsp
+      pinentry_mac
     ];
   };
 

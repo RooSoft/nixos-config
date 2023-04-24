@@ -25,6 +25,7 @@ in
       elixir_ls
       rnix-lsp
       inputs.neovim-flake.packages.x86_64-linux
+      inotify-tools
     ];
   };
 
