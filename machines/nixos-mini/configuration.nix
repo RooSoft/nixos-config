@@ -42,6 +42,7 @@
     lf
     ripgrep
     bat
+    openssh
   ];
 
   programs =

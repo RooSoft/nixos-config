@@ -10,4 +10,5 @@ with pkgs; [
   less
   unrar-wrapper
   gnupg
+  jq
 ]
