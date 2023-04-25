@@ -23,6 +23,8 @@ in
       elixir_ls
       rnix-lsp
       pinentry_mac
+      libfido2
+      yubico-piv-tool
     ];
   };
 
