@@ -28,6 +28,8 @@ in
       postgresql_15
       inputs.neovim-flake.packages.x86_64-linux
       inotify-tools
+
+      rustc cargo rust-analyzer rustfmt
     ];
   };
 

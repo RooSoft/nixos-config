@@ -79,7 +79,7 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 443 ];
+  networking.firewall.allowedTCPPorts = [ 22 443 4000 ];
   networking.firewall.allowedUDPPorts = [ ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
