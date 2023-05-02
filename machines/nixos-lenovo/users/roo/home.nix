@@ -29,6 +29,7 @@ in
       inputs.neovim-flake.packages.x86_64-linux
       inotify-tools
 
+      gcc
       rustc cargo rust-analyzer rustfmt
     ];
   };
