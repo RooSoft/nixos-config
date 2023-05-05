@@ -25,6 +25,8 @@ in
       pinentry_mac
       libfido2
       yubico-piv-tool
+
+      rustc cargo rust-analyzer rustfmt
     ];
   };
 
