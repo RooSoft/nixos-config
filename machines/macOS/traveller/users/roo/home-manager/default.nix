@@ -27,6 +27,7 @@ in
       yubico-piv-tool
 
       rustc cargo rust-analyzer rustfmt
+      websocat qrencode zbar nodePackages.http-server
     ];
   };
 
