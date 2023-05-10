@@ -1,4 +1,4 @@
-{ pkgs, lib, commonFolder, ... }:
+{ pkgs, unstable, lib, commonFolder, ... }:
 let
   defaultHomePackagesPath = commonFolder + "/defaultHomePackages.nix";
 
@@ -26,7 +26,7 @@ in
       libfido2
       yubico-piv-tool
 
-      rustc cargo rust-analyzer rustfmt
+      unstable.rustc cargo rust-analyzer rustfmt
       websocat qrencode zbar nodePackages.http-server
       wasm-pack
     ];
