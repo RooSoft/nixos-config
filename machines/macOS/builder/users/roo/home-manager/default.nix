@@ -26,7 +26,7 @@ in
       libfido2
       yubico-piv-tool
 
-      unstable.rustc cargo rust-analyzer rustfmt
+      unstable.rustc unstable.cargo unstable.cargo-generate unstable.rust-analyzer unstable.rustfmt
       websocat qrencode zbar nodePackages.http-server
       wasm-pack
     ];
