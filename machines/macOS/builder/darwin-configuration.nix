@@ -1,6 +1,9 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = [
+  ];
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;
@@ -8,6 +11,7 @@
     vim
     rnix-lsp
     inputs.neovim-flake.packages.aarch64-darwin
+#    magic-wormhole
   ];
 
   # Use a custom configuration.nix location.

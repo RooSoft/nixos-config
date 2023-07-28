@@ -18,6 +18,8 @@ in
     stateVersion = "22.11";
 
     packages = with pkgs; (import defaultHomePackagesPath { pkgs = pkgs; }) ++ [
+      fd
+
       nodejs-16_x
       elixir_1_14
       elixir_ls
