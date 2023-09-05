@@ -20,7 +20,7 @@ in
     packages = with pkgs; (import defaultHomePackagesPath { pkgs = pkgs; }) ++ [
       fd
 
-      nodejs-16_x
+      nodejs-18_x
       elixir_1_14
       elixir_ls
       rnix-lsp

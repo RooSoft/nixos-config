@@ -8,10 +8,9 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;
   [ 
-    vim
     rnix-lsp
     inputs.neovim-flake.packages.aarch64-darwin
-#    magic-wormhole
+    tree-sitter
   ];
 
   # Use a custom configuration.nix location.
@@ -29,6 +28,8 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+
+  users.users.roo.home = "/Users/roo";
 
   nix.extraOptions = ''
     build-users-group = nixbld
