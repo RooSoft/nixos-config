@@ -60,13 +60,13 @@ in
       customPaneNavigationAndResize = true;
       keyMode = "vi";
       terminal = "screen-256color";
-      extraConfig = "
+      extraConfig = ''
         set -g mouse on
 
         set-option -sg escape-time 10
         set-option -g focus-events on
         set-option -sa terminal-overrides ',xterm-256color:RGB'
-      ";
+      '';
     };
   };
 }
