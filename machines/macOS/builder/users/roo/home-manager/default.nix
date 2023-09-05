@@ -28,8 +28,15 @@ in
       libfido2
       yubico-piv-tool
 
-      unstable.rustc unstable.cargo unstable.cargo-generate unstable.rust-analyzer unstable.rustfmt
-      websocat qrencode zbar nodePackages.http-server
+      unstable.rustc
+      unstable.cargo
+      unstable.cargo-generate
+      unstable.rust-analyzer
+      unstable.rustfmt
+      websocat
+      qrencode
+      zbar
+      nodePackages.http-server
       wasm-pack
     ];
   };
@@ -43,6 +50,18 @@ in
         ls = "ls --color=auto -F";
         update-system = "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
       };
+    };
+
+    tmux = {
+      enable = true;
+      customPaneNavigationAndResize = true;
+      keyMode = "vi";
+      terminal = "screen-256color";
+      extraConfig = "
+        set-option -sg escape-time 10
+        set-option -g focus-events on
+        set-option -sa terminal-overrides ',xterm-256color:RGB'
+      ";
     };
   };
 }

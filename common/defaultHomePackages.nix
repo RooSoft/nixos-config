@@ -3,7 +3,6 @@
 }:
 with pkgs; [
   htop
-  tmux
   tree
   ripgrep
   curl
