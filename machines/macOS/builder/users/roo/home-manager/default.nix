@@ -50,6 +50,9 @@ in
         ls = "ls --color=auto -F";
         update-system = "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
       };
+      envExtra = "
+        export GPG_TTY=$(tty)
+      ";
     };
 
     tmux = {
@@ -58,6 +61,8 @@ in
       keyMode = "vi";
       terminal = "screen-256color";
       extraConfig = "
+        set -g mouse on
+
         set-option -sg escape-time 10
         set-option -g focus-events on
         set-option -sa terminal-overrides ',xterm-256color:RGB'
