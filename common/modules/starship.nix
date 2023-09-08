@@ -7,6 +7,8 @@
     enableZshIntegration = true;
 
     settings = {
+      scan_timeout = 250;
+
       palette = "foo";
 
       palettes.foo = {
