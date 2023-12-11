@@ -1,19 +1,19 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [
-    ./postgresql.nix
-  ];
+  imports = [ ./postgresql.nix ];
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs;
-    [
-      rnix-lsp
-      inputs.neovim-flake.packages.aarch64-darwin
-      tree-sitter
-      wireguard-tools
-    ];
+  environment.systemPackages = with pkgs; [
+    rnix-lsp
+    tree-sitter
+    wireguard-tools
+
+    npins
+
+    inputs.nvim-flake.packages.aarch64-darwin.default
+  ];
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
@@ -36,13 +36,9 @@
   homebrew = {
     enable = true;
 
-    brews = [
-    ];
+    brews = [ ];
 
-    casks = [
-      "wireshark"
-      "1password-cli"
-    ];
+    casks = [ "wireshark" "1password-cli" ];
   };
 
   nix.extraOptions = ''

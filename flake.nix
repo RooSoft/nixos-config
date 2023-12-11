@@ -15,10 +15,7 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
-    neovim-flake = {
-      url = "github:roosoft/neovim-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nvim-flake.url = "github:roosoft/nvim-flake";
   };
 
   outputs =
@@ -27,7 +24,7 @@
     , home-manager
     , flake-utils
     , darwin
-    , neovim-flake
+    , nvim-flake
     , ...
     } @ inputs:
     let
