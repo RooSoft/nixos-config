@@ -12,6 +12,7 @@
       rnix-lsp
       inputs.neovim-flake.packages.aarch64-darwin
       tree-sitter
+      wireguard-tools
     ];
 
   # Use a custom configuration.nix location.

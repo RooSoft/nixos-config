@@ -19,6 +19,7 @@ in
 
     packages = with pkgs; (import defaultHomePackagesPath { pkgs = pkgs; }) ++ [
       fd
+      inetutils
 
       nodejs-18_x
       elixir_1_14
@@ -30,9 +31,15 @@ in
 
       unstable.rustc
       unstable.cargo
+      unstable.cargo-watch
       unstable.cargo-generate
+      unstable.cargo-nextest
       unstable.rust-analyzer
       unstable.rustfmt
+      unstable.clippy
+      unstable.just
+      secp256k1
+      iconv
       websocat
       qrencode
       zbar
