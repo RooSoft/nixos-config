@@ -220,11 +220,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1702340816,
-        "narHash": "sha256-K4pqOX+waMc0dfr43Z3FrjT6YXk1PD6dPFZKXBKqbWg=",
+        "lastModified": 1702412821,
+        "narHash": "sha256-O2X995tLHhob09jH9fTOmdmBcbq4DopAvPqZ/i33frI=",
         "owner": "roosoft",
         "repo": "nvim-flake",
-        "rev": "f8b08b220f0480777983b9f45454cdb584e50c52",
+        "rev": "158dd2b5bf67cb95e3bb0443fcda30f716657805",
         "type": "github"
       },
       "original": {
