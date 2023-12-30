@@ -19,8 +19,9 @@ in {
         inetutils
 
         nodejs-18_x
-        elixir_1_14
-        elixir_ls
+        unstable.erlang
+        unstable.elixir
+        unstable.elixir_ls
         rnix-lsp
         pinentry_mac
         libfido2
