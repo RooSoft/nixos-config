@@ -18,6 +18,10 @@ in {
         fd
         inetutils
 
+        taskwarrior
+        diskonaut
+        bandwhich
+
         nodejs-18_x
         unstable.erlang
         unstable.elixir
