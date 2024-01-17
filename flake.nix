@@ -16,6 +16,8 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     nvim-flake.url = "github:roosoft/nvim-flake";
+
+    project-commander.url = "github:roosoft/project_commander";
   };
 
   outputs =

@@ -60,7 +60,7 @@ in {
         update-system =
           "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
       };
-      envExtra = "\n        export GPG_TTY=$(tty)\n      ";
+      envExtra = "\nexport GPG_TTY=$(tty)\npcd () {cd `pc --name=$1`}";
     };
 
     tmux = {
