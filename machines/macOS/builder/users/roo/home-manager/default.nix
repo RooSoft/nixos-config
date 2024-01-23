@@ -47,6 +47,8 @@ in {
         zbar
         nodePackages.http-server
         wasm-pack
+
+        lazygit
       ];
   };
 
