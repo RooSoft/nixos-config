@@ -49,6 +49,7 @@ in {
         wasm-pack
 
         lazygit
+        zellij
       ];
   };
 
