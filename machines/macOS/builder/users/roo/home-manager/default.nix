@@ -50,6 +50,8 @@ in {
 
         lazygit
         zellij
+
+        miniserve
       ];
   };
 
