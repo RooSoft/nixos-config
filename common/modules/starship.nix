@@ -1,6 +1,5 @@
-{ lib, ... }:
-{
-  imports = [ ];
+{lib, ...}: {
+  imports = [];
 
   programs.starship = {
     enable = true;
@@ -75,45 +74,43 @@
         style = "mustard bold";
       };
 
-      format =
-        let
-          who = [
-            "$username"
-            "$hostname"
-            "$directory"
-          ];
+      format = let
+        who = [
+          "$username"
+          "$hostname"
+          "$directory"
+        ];
 
-          git = [
-            "$git_branch"
-            "$git_state"
-            "$git_status"
-            "$git_metrics"
-          ];
+        git = [
+          "$git_branch"
+          "$git_state"
+          "$git_status"
+          "$git_metrics"
+        ];
 
-          fill = [ "$fill" ];
+        fill = ["$fill"];
 
-          duration = [
-            "$cmd_duration"
-          ];
+        duration = [
+          "$cmd_duration"
+        ];
 
-          time = [
-            "$jobs"
-            "$time"
-          ];
+        time = [
+          "$jobs"
+          "$time"
+        ];
 
-          languages = [
-            "$nix_shell"
-            "$nodejs"
-            "$elixir"
-            "$lua"
-          ];
+        languages = [
+          "$nix_shell"
+          "$nodejs"
+          "$elixir"
+          "$lua"
+        ];
 
-
-          prompt = [
-            "$line_break"
-            "❯ "
-          ];
-        in
+        prompt = [
+          "$line_break"
+          "❯ "
+        ];
+      in
         lib.concatStrings (who ++ git ++ fill ++ duration ++ languages ++ time ++ prompt);
     };
   };

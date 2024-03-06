@@ -1,7 +1,10 @@
-{ config, pkgs, inputs, ... }:
-
 {
-  imports = [ ./postgresql.nix ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [./postgresql.nix];
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -38,9 +41,9 @@
   homebrew = {
     enable = true;
 
-    brews = [ ];
+    brews = [];
 
-    casks = [ "wireshark" "1password-cli" ];
+    casks = ["wireshark" "1password-cli"];
   };
 
   nix.extraOptions = ''

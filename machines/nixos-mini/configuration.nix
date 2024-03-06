@@ -1,15 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, lib, modulesFolder, ... }:
-
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  lib,
+  modulesFolder,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -23,9 +25,8 @@
 
   users.users.roo = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-
     ];
     shell = pkgs.zsh;
   };
@@ -45,20 +46,18 @@
     openssh
   ];
 
-  programs =
-    let
-      starshipModulePath = modulesFolder + "/starship.nix";
-    in
-    {
-      mtr.enable = true;
+  programs = let
+    starshipModulePath = modulesFolder + "/starship.nix";
+  in {
+    mtr.enable = true;
 
-      gnupg.agent = {
-        enable = true;
-        enableSSHSupport = true;
-      };
-
-      starship = import starshipModulePath { lib = lib; };
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
     };
+
+    starship = import starshipModulePath {lib = lib;};
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -71,10 +70,10 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 443 ];
-  networking.firewall.allowedUDPPorts = [ ];
+  networking.firewall.allowedTCPPorts = [22 443];
+  networking.firewall.allowedUDPPorts = [];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -83,6 +82,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }
-

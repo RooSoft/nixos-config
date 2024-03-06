@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   # documentation about running postgresql on a mac with the nix package manager
   # https://mgdm.net/weblog/postgresql-in-a-nix-shell/
 
@@ -33,4 +36,3 @@
     StandardOutPath = "/Users/roo/.local/share/postgresql/postgres.out.log";
   };
 }
-

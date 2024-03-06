@@ -1,13 +1,17 @@
-{ lib, pkgs , inputs , commonFolder , ... }:
-let
+{
+  lib,
+  pkgs,
+  inputs,
+  commonFolder,
+  ...
+}: let
   defaultHomePackagesPath = commonFolder + "/defaultHomePackages.nix";
 
   modulesFolder = commonFolder + "/modules";
 
   starshipModulePath = modulesFolder + "/starship.nix";
   zshModulePath = modulesFolder + "/zsh.nix";
-in
-{
+in {
   imports = [
     zshModulePath
     starshipModulePath
@@ -19,14 +23,16 @@ in
     stateVersion = "22.11";
     username = "roo";
     homeDirectory = /home/roo;
-    packages = with pkgs; (import defaultHomePackagesPath { pkgs = pkgs; }) ++ [
-      nodejs-16_x
-      elixir_1_14
-      elixir_ls
-      rnix-lsp
-      inputs.neovim-flake.packages.x86_64-linux
-      inotify-tools
-    ];
+    packages = with pkgs;
+      (import defaultHomePackagesPath {pkgs = pkgs;})
+      ++ [
+        nodejs-16_x
+        elixir_1_14
+        elixir_ls
+        rnix-lsp
+        inputs.neovim-flake.packages.x86_64-linux
+        inotify-tools
+      ];
   };
 
   programs.zsh = {
