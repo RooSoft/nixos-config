@@ -50,6 +50,7 @@ in {
 
         lazygit
         zellij
+        helix
 
         miniserve
 
