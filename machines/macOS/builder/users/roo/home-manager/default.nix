@@ -1,5 +1,11 @@
-{ pkgs, unstable, lib, commonFolder, inputs, ... }:
-let
+{
+  pkgs,
+  unstable,
+  lib,
+  commonFolder,
+  inputs,
+  ...
+}: let
   defaultHomePackagesPath = commonFolder + "/defaultHomePackages.nix";
 
   modulesFolder = commonFolder + "/modules";
@@ -7,13 +13,14 @@ let
   starshipModulePath = modulesFolder + "/starship.nix";
   zshModulePath = modulesFolder + "/zsh.nix";
 in {
-  imports = [ starshipModulePath zshModulePath ];
+  imports = [starshipModulePath zshModulePath];
 
   home = {
     stateVersion = "22.11";
 
     packages = with pkgs;
-      (import defaultHomePackagesPath { pkgs = pkgs; }) ++ [
+      (import defaultHomePackagesPath {pkgs = pkgs;})
+      ++ [
         nixfmt
         fd
         inetutils
@@ -50,7 +57,9 @@ in {
 
         lazygit
         zellij
+
         helix
+        alejandra
 
         miniserve
 
@@ -67,8 +76,7 @@ in {
     zsh = {
       shellAliases = {
         ls = "ls --color=auto -F";
-        update-system =
-          "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
+        update-system = "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
       };
       envExtra = "\nexport GPG_TTY=$(tty)\npcd () {cd `pc --name=$1`}";
     };
@@ -88,4 +96,3 @@ in {
     };
   };
 }
-
