@@ -60,6 +60,7 @@ in {
 
         helix
         alejandra
+        lldb
 
         miniserve
 
