@@ -37,7 +37,7 @@ in {
         diskonaut
         bandwhich
 
-        nodejs-18_x
+        nodejs_20
         unstable.erlang
         unstable.elixir
         unstable.elixir_ls
