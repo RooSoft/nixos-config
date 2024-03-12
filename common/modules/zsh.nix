@@ -13,7 +13,7 @@
 
     sessionVariables = {
       CLICOLOR = 1;
-      EDITOR = "nvim";
+      EDITOR = "hx";
     };
   };
 }

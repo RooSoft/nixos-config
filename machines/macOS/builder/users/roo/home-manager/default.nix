@@ -13,10 +13,18 @@
   starshipModulePath = modulesFolder + "/starship.nix";
   zshModulePath = modulesFolder + "/zsh.nix";
 in {
-  imports = [starshipModulePath zshModulePath];
+  imports = [
+    starshipModulePath 
+    zshModulePath
+    ./zellij.nix
+  ];
 
   home = {
     stateVersion = "22.11";
+
+    sessionVariables = {
+      EDITOR = "hx";
+    };
 
     packages = with pkgs;
       (import defaultHomePackagesPath {pkgs = pkgs;})
@@ -55,8 +63,10 @@ in {
         nodePackages.http-server
         wasm-pack
 
+        zoxide
+
         lazygit
-        zellij
+#        zellij
 
         helix
         alejandra
@@ -79,7 +89,11 @@ in {
         ls = "ls --color=auto -F";
         update-system = "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
       };
-      envExtra = "\nexport GPG_TTY=$(tty)\npcd () {cd `pc --name=$1`}";
+      envExtra = ''
+        export GPG_TTY=$(tty)
+        pcd () {cd `pc --name=$1`}
+        eval "$(zoxide init zsh)"
+      '';
     };
 
     tmux = {
