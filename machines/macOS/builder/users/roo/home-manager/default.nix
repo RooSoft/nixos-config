@@ -22,10 +22,6 @@ in {
   home = {
     stateVersion = "22.11";
 
-    sessionVariables = {
-      EDITOR = "hx";
-    };
-
     packages = with pkgs;
       (import defaultHomePackagesPath {pkgs = pkgs;})
       ++ [
