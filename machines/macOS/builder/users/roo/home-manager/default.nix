@@ -14,7 +14,7 @@
   zshModulePath = modulesFolder + "/zsh.nix";
 in {
   imports = [
-    starshipModulePath 
+    starshipModulePath
     zshModulePath
     ./zellij.nix
   ];
@@ -63,7 +63,7 @@ in {
         eza
 
         lazygit
-#        zellij
+        #        zellij
 
         helix
         alejandra
