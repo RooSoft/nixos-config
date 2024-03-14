@@ -1,4 +1,8 @@
-{pkgs, unstable, ...}: let
+{
+  pkgs,
+  unstable,
+  ...
+}: let
   package = unstable.zellij;
 
   src = pkgs.fetchFromGitHub {
@@ -17,7 +21,7 @@ in {
     enable = true;
     inherit package;
     settings = {
-     # theme = "gruvbox-dark";
+      # theme = "gruvbox-dark";
       theme = "tokyo-night-dark";
     };
   };
