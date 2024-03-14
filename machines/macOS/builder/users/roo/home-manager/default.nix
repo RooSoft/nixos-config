@@ -60,6 +60,7 @@ in {
         wasm-pack
 
         zoxide
+        eza
 
         lazygit
 #        zellij
