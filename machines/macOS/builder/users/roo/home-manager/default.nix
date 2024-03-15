@@ -17,6 +17,7 @@ in {
     starshipModulePath
     zshModulePath
     ./zellij.nix
+    ./helix.nix
   ];
 
   home = {
