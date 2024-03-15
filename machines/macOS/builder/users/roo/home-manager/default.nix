@@ -63,7 +63,6 @@ in {
         eza
 
         lazygit
-        #        zellij
 
         helix
         alejandra
