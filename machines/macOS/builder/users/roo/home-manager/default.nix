@@ -14,6 +14,7 @@
   zshModulePath = modulesFolder + "/zsh.nix";
 in {
   imports = [
+    ../../../../../../common/modules/eza.nix
     starshipModulePath
     zshModulePath
     ./zellij.nix
@@ -61,7 +62,6 @@ in {
         wasm-pack
 
         zoxide
-        eza
 
         lazygit
 
