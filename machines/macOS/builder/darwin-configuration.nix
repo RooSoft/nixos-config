@@ -20,6 +20,19 @@
     inputs.project-commander.defaultPackage.aarch64-darwin
   ];
 
+  # networking.extraHosts =
+  # ''
+  #   192.168.11.2 ratel
+  #   192.168.88.33 babar
+    
+  #   192.168.13.5 git.roosoft.com
+  #   192.169.13.5 electrum.roosoft.com
+
+  #   192.168.11.3 loki
+  #   192.168.11.4 grafana
+  #   192.168.11.5 gitea
+  # '';
+
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
