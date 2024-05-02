@@ -15,9 +15,9 @@
 in {
   imports = [
     ../../../../../../common/modules/eza.nix
+    ../../../../../../common/modules/zellij
     starshipModulePath
     zshModulePath
-    ./zellij.nix
     ./helix.nix
   ];
 
