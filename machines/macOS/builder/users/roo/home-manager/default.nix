@@ -74,6 +74,8 @@ in {
         flyctl
 
         irssi
+
+        minio-client
       ];
   };
 
