@@ -31,6 +31,7 @@ in {
         fd
         inetutils
         btop
+        fzf
 
         taskwarrior
         diskonaut
