@@ -30,6 +30,7 @@ in {
         nixfmt
         fd
         inetutils
+        btop
 
         taskwarrior
         diskonaut
