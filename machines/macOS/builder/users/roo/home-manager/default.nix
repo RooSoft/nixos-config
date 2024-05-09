@@ -90,6 +90,7 @@ in {
       shellAliases = {
         ls = "ls --color=auto -F";
         update-system = "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
+        e = "eza -lg --git --git-repos";
       };
       envExtra = ''
         export GPG_TTY=$(tty)
