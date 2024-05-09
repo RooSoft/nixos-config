@@ -19,6 +19,7 @@ in {
     starshipModulePath
     zshModulePath
     ./helix.nix
+    ./atuin.nix
   ];
 
   home = {
