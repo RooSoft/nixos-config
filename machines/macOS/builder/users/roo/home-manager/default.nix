@@ -33,6 +33,7 @@ in {
         inetutils
         btop
         fzf
+        tldr
 
         taskwarrior
         diskonaut
