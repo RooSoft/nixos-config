@@ -34,6 +34,7 @@ in {
         btop
         fzf
         tldr
+        magic-wormhole-rs
 
         taskwarrior
         diskonaut
