@@ -74,6 +74,11 @@
       "/sbin"
     ];
 
+    environment = {
+      HOST = "0.0.0.0";
+      PORT = "8080";
+    };
+
     script = ''
       cd /Users/roo/work/test/openwebui/open-webui/backend
       ${pkgs.bash}/bin/bash start.sh
