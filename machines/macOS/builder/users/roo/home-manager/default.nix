@@ -35,6 +35,7 @@ in {
         fzf
         tldr
         magic-wormhole-rs
+        gh
 
         taskwarrior
         diskonaut
