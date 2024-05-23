@@ -42,5 +42,9 @@
 
   tomlFormat = (pkgs.formats.toml {}).generate "something" config;
 in {
+  imports = [
+    ./languages.nix
+  ];
+
   home.file.".config/helix/config.toml".source = tomlFormat;
 }
