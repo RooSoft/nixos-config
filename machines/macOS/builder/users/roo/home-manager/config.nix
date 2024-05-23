@@ -2,7 +2,7 @@
   package = unstable.helix;
 
   config = {
-    theme = "gruvbox_dark_hard";
+    theme = "jellybeans";
 
     editor = {
       true-color = true;
