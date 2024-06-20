@@ -95,7 +95,10 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = {commonFolder = ./common;};
+              extraSpecialArgs = {
+                unstable = pkgs_unstable "aarch64-darwin";
+                commonFolder = ./common;
+              };
               users.roo = {
                 imports = [./machines/macOS/traveller/users/roo/home-manager];
               };
