@@ -9,7 +9,6 @@
   environment.systemPackages = with pkgs; [
     vim
     rnix-lsp
-    inputs.neovim-flake.packages.aarch64-darwin
   ];
 
   # Use a custom configuration.nix location.

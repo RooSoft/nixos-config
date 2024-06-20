@@ -22,15 +22,44 @@
 
   # networking.extraHosts =
   # ''
-  #   192.168.11.2 ratel
-  #   192.168.88.33 babar
-    
-  #   192.168.13.5 git.roosoft.com
-  #   192.169.13.5 electrum.roosoft.com
+    # 192.168.10.1 edgerouter
+    # 192.168.10.2 edgeswitch
+    # 192.168.88.33 babar
+    # 127.0.0.1 ai
 
-  #   192.168.11.3 loki
-  #   192.168.11.4 grafana
-  #   192.168.11.5 gitea
+    # 192.168.88.10 host01
+    # 192.168.88.11 host02
+    # 192.168.88.12 host03
+
+    # # 192.168.11.6 roosoft.com
+    # 192.168.11.6 git.roosoft.com
+    # # 192.168.11.6 wiki.roosoft.com
+
+    # # 192.169.13.5 electrum.roosoft.com
+
+
+    # 192.168.11.2 astro
+    # 192.168.11.3 loki
+    # 192.168.11.4 grafana
+    # 192.168.11.6 gitea #192.168.11.5
+    # 192.168.11.6 dmz
+    # 192.168.11.7 wiki
+    # 192.168.11.8 homepage
+    # 192.168.11.11 mempool
+    # 192.168.11.12 electrs
+    # 192.168.11.6 mattermost # 192.168.11.13
+    # 192.168.11.14 roadWarrior
+
+    # 192.168.12.2 ratel
+    # 192.168.12.3 loki-staging
+    # 192.168.12.4 grafana-staging
+    # 192.168.12.5 gitea-staging
+    # 192.168.12.7 wiki-staging
+    # 192.168.12.10 minio-staging
+    # 192.168.12.13 mattermost-staging
+
+
+    # 192.168.11.6 test-chat.roosoft.com
   # '';
 
   # Use a custom configuration.nix location.

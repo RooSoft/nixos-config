@@ -30,6 +30,7 @@ in {
       ++ [
         nixfmt
         fd
+        xh
         inetutils
         btop
         fzf
