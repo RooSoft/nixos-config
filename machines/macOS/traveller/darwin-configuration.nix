@@ -9,6 +9,13 @@
   environment.systemPackages = with pkgs; [
     vim
     rnix-lsp
+    wireguard-tools
+
+    npins
+
+    inputs.nvim-flake.packages.aarch64-darwin.default
+
+    inputs.project-commander.defaultPackage.aarch64-darwin
   ];
 
   # Use a custom configuration.nix location.
@@ -26,6 +33,16 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+
+  users.users.roo.home = "/Users/roo";
+
+  homebrew = {
+    enable = true;
+
+    brews = [];
+
+    casks = ["wireshark" "1password-cli"];
+  };
 
   nix.extraOptions = ''
     build-users-group = nixbld
