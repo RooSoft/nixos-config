@@ -109,7 +109,7 @@
     };
 
     script = ''
-      cd /Users/roo/work/test/openwebui/open-webui/backend
+      cd /Users/roo/.config/open-webui/backend
       ${pkgs.bash}/bin/bash start.sh
     '';
 
