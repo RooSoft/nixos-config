@@ -117,7 +117,7 @@
       UserName = "roo";
       KeepAlive = true;
       RunAtLoad = true;
-      RootDirectory = "/Users/roo/work/test/openwebui/open-webui/backend";
+      RootDirectory = "/Users/roo/.config/open-webui/backend";
       StandardOutPath = "/var/log/open-webui.out.log";
       StandardErrorPath = "/var/log/open-webui.err.log";
     };
