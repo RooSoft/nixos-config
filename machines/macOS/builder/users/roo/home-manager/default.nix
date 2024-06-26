@@ -29,7 +29,6 @@ in {
     packages = with pkgs;
       (import defaultHomePackagesPath {pkgs = pkgs;})
       ++ [
-        nixfmt
         fd
         xh
         inetutils
@@ -47,7 +46,6 @@ in {
         unstable.erlang
         unstable.elixir
         unstable.elixir_ls
-        rnix-lsp
         pinentry_mac
         libfido2
         yubico-piv-tool
