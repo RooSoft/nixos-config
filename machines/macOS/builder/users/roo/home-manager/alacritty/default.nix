@@ -3,12 +3,16 @@
   unstable,
   ...
 }: let
+  # see https://alacritty.org/config-alacritty.html
   config = {
     font = {
       normal = {
         family = "MesloLGM Nerd Font Mono";
       };
       size = 13;
+      offset = {
+        y = -6;
+      };
     };
 
     keyboard = {
