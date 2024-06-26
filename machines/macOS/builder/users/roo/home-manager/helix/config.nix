@@ -6,7 +6,8 @@
   package = unstable.helix;
 
   config = {
-    theme = "jellybeans";
+    # theme = "jellybeans";
+    theme = "catppuccin_macchiato";
 
     editor = {
       true-color = true;
