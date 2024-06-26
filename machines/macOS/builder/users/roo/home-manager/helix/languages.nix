@@ -1,4 +1,4 @@
-{pkgs, ...} : let
+{pkgs, ...}: let
   config = {
     language = [
       {
@@ -11,7 +11,7 @@
         diagnostic-severity = "Hint";
         comment-token = "#";
         indent = {
-          tab-width = 2; 
+          tab-width = 2;
           unit = " ";
         };
         language-servers = ["elixir-ls"];

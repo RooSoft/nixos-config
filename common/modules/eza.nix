@@ -1,13 +1,11 @@
-{ pkgs, ... } :
-{
+{pkgs, ...}: {
   home.shellAliases = {
     l = "eza -l --git";
   };
 
   home = {
-    packages = with pkgs;
-      [
-        eza
-      ];
+    packages = with pkgs; [
+      eza
+    ];
   };
 }

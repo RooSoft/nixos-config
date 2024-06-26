@@ -1,4 +1,8 @@
-{pkgs, unstable, ...} : let
+{
+  pkgs,
+  unstable,
+  ...
+}: let
   package = unstable.helix;
 
   config = {

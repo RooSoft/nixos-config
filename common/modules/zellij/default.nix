@@ -1,5 +1,8 @@
-{pkgs, inputs, ...}: 
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.zellij = {
     enable = true;
 

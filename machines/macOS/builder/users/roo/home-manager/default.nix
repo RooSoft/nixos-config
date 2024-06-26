@@ -20,6 +20,7 @@ in {
     zshModulePath
     ./helix
     ./atuin.nix
+    ./alacritty
   ];
 
   home = {
