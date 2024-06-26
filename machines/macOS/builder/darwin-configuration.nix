@@ -83,7 +83,7 @@
   homebrew = {
     enable = true;
 
-    brews = [];
+    brews = ["iproute2mac"];
 
     casks = ["wireshark" "1password-cli"];
   };
