@@ -9,7 +9,8 @@
     enableZshIntegration = true;
 
     settings = {
-      theme = "tokyo-night-dark";
+      # theme = "tokyo-night-dark";
+      theme = "catppuccin-macchiato";
 
       simplified_ui = false;
       pane_frames = false;
