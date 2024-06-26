@@ -46,6 +46,8 @@
         x = 2;
         y = 4;
       };
+      opacity = 0.8;
+      decorations = "Buttonless";
     };
   };
 
