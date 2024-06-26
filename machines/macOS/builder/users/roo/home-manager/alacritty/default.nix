@@ -29,6 +29,13 @@
         } # select previous tab
       ];
     };
+
+    colors = {
+      primary = {
+        foreground = "#c0cbf2";
+        background = "#24283a";
+      };
+    };
   };
 
   tomlFormat = (pkgs.formats.toml {}).generate "something" config;
