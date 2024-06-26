@@ -20,12 +20,12 @@
         {
           key = "ArrowRight";
           mods = "Command";
-          chars = "\x02n";
+          action = "SelectNextTab";
         } # select next tab
         {
           key = "ArrowLeft";
           mods = "Command";
-          chars = "\x02p";
+          action = "SelectPreviousTab";
         } # select previous tab
       ];
     };
