@@ -21,12 +21,12 @@
           key = "ArrowRight";
           mods = "Command";
           action = "SelectNextTab";
-        } # select next tab
+        }
         {
           key = "ArrowLeft";
           mods = "Command";
           action = "SelectPreviousTab";
-        } # select previous tab
+        }
       ];
     };
 
