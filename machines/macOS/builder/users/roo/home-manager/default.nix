@@ -104,7 +104,11 @@ in {
       '';
       initExtra = ''
         eval "$(/opt/homebrew/bin/brew shellenv)"
+
+        # see https://superuser.com/a/169930/109556
         bindkey "\e[3~" delete-char
+        bindkey "\e[F" forward-word
+        bindkey "\e[H" backward-word
       '';
     };
 
