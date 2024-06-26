@@ -35,6 +35,10 @@
         foreground = "#c0cbf2";
         background = "#24283a";
       };
+      selection = {
+        foreground = "#111111";
+        background = "#90ccfa";
+      };
     };
   };
 
