@@ -47,6 +47,7 @@
         y = 4;
       };
       opacity = 0.8;
+      blur = true;
       decorations = "Buttonless";
     };
   };
