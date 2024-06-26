@@ -40,6 +40,13 @@
         background = "#90ccfa";
       };
     };
+
+    window = {
+      padding = {
+        x = 2;
+        y = 4;
+      };
+    };
   };
 
   tomlFormat = (pkgs.formats.toml {}).generate "something" config;
