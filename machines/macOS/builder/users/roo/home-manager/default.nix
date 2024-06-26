@@ -104,6 +104,7 @@ in {
       '';
       initExtra = ''
         eval "$(/opt/homebrew/bin/brew shellenv)"
+        bindkey "\e[3~" delete-char
       '';
     };
 
