@@ -18,7 +18,7 @@ in {
     ../../../../../../common/modules/zellij
     starshipModulePath
     zshModulePath
-    ./helix.nix
+    ./helix
     ./atuin.nix
   ];
 
