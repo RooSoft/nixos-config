@@ -101,6 +101,9 @@ in {
         pcd () {cd `pc --name=$1`}
         eval "$(zoxide init zsh)"
       '';
+      initExtra = ''
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      '';
     };
 
     tmux = {
