@@ -1,4 +1,4 @@
-{pkgs, ...} : {
+{pkgs, ...}: {
   launchd.daemons.open-webui = {
     path = [
       "/opt/homebrew/bin"
