@@ -19,6 +19,7 @@ in {
     starshipModulePath
     zshModulePath
     ./helix
+    ./git.nix
     ./atuin.nix
     ./alacritty
   ];
@@ -37,6 +38,7 @@ in {
         tldr
         magic-wormhole-rs
         gh
+        delta
 
         taskwarrior
         diskonaut
