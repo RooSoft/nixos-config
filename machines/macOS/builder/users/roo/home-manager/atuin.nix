@@ -1,6 +1,8 @@
 {config, ...}: {
   programs.atuin = {
     enable = true;
+
+    # see https://docs.atuin.sh/configuration/config/
     settings = {
       auto_sync = false;
       update_check = false;
