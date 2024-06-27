@@ -52,7 +52,7 @@
       };
       opacity = 0.8;
       blur = true;
-      decorations = "Buttonless";
+      # decorations = "Buttonless";
     };
   };
 
