@@ -5,6 +5,7 @@
     delta = {
       enable = true;
 
+      # see https://dandavison.github.io/delta/configuration.html
       options = {
         decorations = {
           commit-decoration-style = "bold yellow box ul";
