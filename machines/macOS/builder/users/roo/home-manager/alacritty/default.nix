@@ -27,6 +27,10 @@
           mods = "Command";
           action = "SelectPreviousTab";
         }
+        {
+          key = "F12";
+          action = "ToggleFullscreen";
+        }
       ];
     };
 
