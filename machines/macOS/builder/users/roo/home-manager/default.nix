@@ -17,7 +17,6 @@ in {
     ../../../../../../common/modules/zellij
     starshipModulePath
     zshModulePath
-    ./helix
     ./git.nix
     ./atuin.nix
     ./alacritty
@@ -25,6 +24,7 @@ in {
 
   roopkgs.home = {
     eza.enable = true;
+    helix.enable = true;
   };
 
   home = {
@@ -76,7 +76,6 @@ in {
 
         lazygit
 
-        helix
         alejandra
         lldb
 
