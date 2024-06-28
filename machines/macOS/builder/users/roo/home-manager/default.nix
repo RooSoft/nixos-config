@@ -22,6 +22,7 @@ in {
     eza.enable = true;
     helix.enable = true;
     atuin.enable = true;
+    tmux.enable = false;
     zellij.enable = true;
     starship.enable = true;
   };
@@ -109,20 +110,6 @@ in {
         bindkey "\e[3~" delete-char
         bindkey "\e[F" forward-word
         bindkey "\e[H" backward-word
-      '';
-    };
-
-    tmux = {
-      enable = true;
-      customPaneNavigationAndResize = true;
-      keyMode = "vi";
-      terminal = "screen-256color";
-      extraConfig = ''
-        set -g mouse on
-
-        set-option -sg escape-time 10
-        set-option -g focus-events on
-        set-option -sa terminal-overrides ',xterm-256color:RGB'
       '';
     };
   };
