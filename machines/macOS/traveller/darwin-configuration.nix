@@ -38,9 +38,8 @@
   homebrew = {
     enable = true;
 
-    brews = [];
-
-    casks = ["wireshark" "1password-cli"];
+    brews = ["iproute2mac"];
+    casks = ["wireshark" "1password-cli" "font-meslo-lg-nerd-font" "alacritty"];
   };
 
   nix.extraOptions = ''
