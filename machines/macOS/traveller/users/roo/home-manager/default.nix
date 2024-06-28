@@ -10,12 +10,9 @@
 
   modulesFolder = commonFolder + "/modules";
 
-  starshipModulePath = modulesFolder + "/starship.nix";
   zshModulePath = modulesFolder + "/zsh.nix";
 in {
   imports = [
-    ../../../../../../common/modules/zellij
-    starshipModulePath
     zshModulePath
   ];
 
@@ -23,6 +20,8 @@ in {
     eza.enable = true;
     helix.enable = true;
     atuin.enable = true;
+    zellij.enable = true;
+    starship.enable = true;
   };
 
   home = {

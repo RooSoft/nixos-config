@@ -10,11 +10,9 @@
 
   modulesFolder = commonFolder + "/modules";
 
-  starshipModulePath = modulesFolder + "/starship.nix";
   zshModulePath = modulesFolder + "/zsh.nix";
 in {
   imports = [
-    starshipModulePath
     zshModulePath
     ./git.nix
     ./alacritty
@@ -25,6 +23,7 @@ in {
     helix.enable = true;
     atuin.enable = true;
     zellij.enable = true;
+    starship.enable = true;
   };
 
   home = {
