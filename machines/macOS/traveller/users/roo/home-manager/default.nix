@@ -8,16 +8,9 @@
   ...
 }: let
   defaultHomePackagesPath = commonFolder + "/defaultHomePackages.nix";
-
-  modulesFolder = commonFolder + "/modules";
-
-  zshModulePath = modulesFolder + "/zsh.nix";
 in {
-  imports = [
-    zshModulePath
-  ];
-
   roopkgs.home = {
+    zsh.enable = true;
     eza.enable = true;
     helix.enable = true;
     atuin.enable = true;

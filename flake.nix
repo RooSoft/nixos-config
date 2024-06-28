@@ -20,8 +20,8 @@
     project-commander.url = "github:roosoft/project_commander";
 
     roopkgs = {
-      # url = "git+file:/Users/roo/work/test/roopkgs";
-      url = "github:roosoft/roopkgs";
+      url = "git+file:/Users/roo/work/test/roopkgs";
+      # url = "github:roosoft/roopkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
