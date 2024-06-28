@@ -4,6 +4,7 @@
   lib,
   commonFolder,
   inputs,
+  roopkgs,
   ...
 }: let
   defaultHomePackagesPath = commonFolder + "/defaultHomePackages.nix";
@@ -20,6 +21,7 @@ in {
     eza.enable = true;
     helix.enable = true;
     atuin.enable = true;
+    tmux.enable = false;
     zellij.enable = true;
     starship.enable = true;
   };
@@ -30,7 +32,6 @@ in {
     packages = with pkgs;
       (import defaultHomePackagesPath {pkgs = pkgs;})
       ++ [
-        nixfmt
         fd
         xh
         inetutils
@@ -48,7 +49,6 @@ in {
         unstable.erlang
         unstable.elixir
         unstable.elixir_ls
-        rnix-lsp
         pinentry_mac
         libfido2
         yubico-piv-tool

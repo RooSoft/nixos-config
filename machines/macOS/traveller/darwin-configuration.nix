@@ -8,7 +8,6 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     vim
-    rnix-lsp
     wireguard-tools
 
     npins
