@@ -14,7 +14,6 @@
   zshModulePath = modulesFolder + "/zsh.nix";
 in {
   imports = [
-    ../../../../../../common/modules/zellij
     starshipModulePath
     zshModulePath
     ./git.nix
@@ -25,6 +24,7 @@ in {
     eza.enable = true;
     helix.enable = true;
     atuin.enable = true;
+    zellij.enable = true;
   };
 
   home = {
