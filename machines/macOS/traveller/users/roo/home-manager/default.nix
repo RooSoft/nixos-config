@@ -14,13 +14,16 @@
   zshModulePath = modulesFolder + "/zsh.nix";
 in {
   imports = [
-    ../../../../../../common/modules/eza.nix
     ../../../../../../common/modules/zellij
     starshipModulePath
     zshModulePath
     ./helix.nix
     ./atuin.nix
   ];
+
+  roopkgs.home = {
+    eza.enable = true;
+  };
 
   home = {
     stateVersion = "22.11";
@@ -94,7 +97,6 @@ in {
       shellAliases = {
         ls = "ls --color=auto -F";
         update-system = "darwin-rebuild switch --flake /Users/roo/.config/nix/.#";
-        e = "eza -lg --git --git-repos";
       };
       envExtra = ''
         export GPG_TTY=$(tty)
