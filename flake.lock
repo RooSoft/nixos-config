@@ -325,17 +325,16 @@
         ]
       },
       "locked": {
+        "dirtyRev": "e450b33c28cf14e11608db32a11e43f998720cb5-dirty",
+        "dirtyShortRev": "e450b33-dirty",
         "lastModified": 1719598484,
-        "narHash": "sha256-7dHcWATOTmRANJOWwLsgouggxuW04TSOxVvNNwJO+4o=",
-        "owner": "roosoft",
-        "repo": "roopkgs",
-        "rev": "e450b33c28cf14e11608db32a11e43f998720cb5",
-        "type": "github"
+        "narHash": "sha256-6CiJ9dxbHdYuUhS/ZfuKUim0M5G7fcewnWOrEdP7YAI=",
+        "type": "git",
+        "url": "file:/Users/roo/work/test/roopkgs"
       },
       "original": {
-        "owner": "roosoft",
-        "repo": "roopkgs",
-        "type": "github"
+        "type": "git",
+        "url": "file:/Users/roo/work/test/roopkgs"
       }
     },
     "root": {

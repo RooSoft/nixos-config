@@ -20,6 +20,7 @@
     project-commander.url = "github:roosoft/project_commander";
 
     roopkgs = {
+      # url = "git+file:/Users/roo/work/test/roopkgs";
       url = "github:roosoft/roopkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -109,10 +110,7 @@
                 commonFolder = ./common;
               };
               users.roo = {
-                imports = [
-                  roopkgs.nixosModules.home
-                  ./machines/macOS/traveller/users/roo/home-manager
-                ];
+                imports = [./machines/macOS/traveller/users/roo/home-manager];
               };
             };
           }

@@ -15,7 +15,7 @@ in {
   imports = [
     zshModulePath
     ./git.nix
-    ./alacritty
+    # ./alacritty
   ];
 
   roopkgs.home = {
@@ -25,6 +25,7 @@ in {
     tmux.enable = false;
     zellij.enable = true;
     starship.enable = true;
+    alacritty.enable = true;
   };
 
   home = {
