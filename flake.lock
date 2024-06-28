@@ -325,11 +325,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1719599876,
-        "narHash": "sha256-6CiJ9dxbHdYuUhS/ZfuKUim0M5G7fcewnWOrEdP7YAI=",
+        "lastModified": 1719600323,
+        "narHash": "sha256-217y8kiFfCwYFO8SiTQPnmOrIR1Eb4QzuImErGU6BS0=",
         "owner": "roosoft",
         "repo": "roopkgs",
-        "rev": "52e929fcbcb4e2bb27f5bd1c3391ae4792f316bc",
+        "rev": "61147c32bcdd8e3389232fe26a238ed8e13b81e9",
         "type": "github"
       },
       "original": {
