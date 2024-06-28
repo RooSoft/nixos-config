@@ -15,7 +15,6 @@ in {
   imports = [
     zshModulePath
     ./git.nix
-    # ./alacritty
   ];
 
   roopkgs.home = {
