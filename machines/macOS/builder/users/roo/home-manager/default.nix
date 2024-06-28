@@ -18,13 +18,13 @@ in {
     starshipModulePath
     zshModulePath
     ./git.nix
-    ./atuin.nix
     ./alacritty
   ];
 
   roopkgs.home = {
     eza.enable = true;
     helix.enable = true;
+    atuin.enable = true;
   };
 
   home = {

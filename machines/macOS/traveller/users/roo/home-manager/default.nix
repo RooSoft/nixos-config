@@ -17,12 +17,12 @@ in {
     ../../../../../../common/modules/zellij
     starshipModulePath
     zshModulePath
-    ./atuin.nix
   ];
 
   roopkgs.home = {
     eza.enable = true;
     helix.enable = true;
+    atuin.enable = true;
   };
 
   home = {

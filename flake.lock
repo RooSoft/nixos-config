@@ -325,10 +325,10 @@
         ]
       },
       "locked": {
-        "dirtyRev": "1f76fdf066808d7ba050dfed8066bed6a8e90eef-dirty",
-        "dirtyShortRev": "1f76fdf-dirty",
-        "lastModified": 1719582079,
-        "narHash": "sha256-qV6fWn1XgBUnBhrqvCyWkK6NR9P1dPFuHaqf3ARxW7I=",
+        "dirtyRev": "647bee677b4f3ed9aec9e8e9293e48962cd083f2-dirty",
+        "dirtyShortRev": "647bee6-dirty",
+        "lastModified": 1719582162,
+        "narHash": "sha256-T9Q+Ei1cpWm14Qw2eOFzpnEvYK/qOnICrtq+qqNe5Cg=",
         "type": "git",
         "url": "file:/Users/roo/work/test/roopkgs"
       },
