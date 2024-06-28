@@ -15,5 +15,9 @@
       CLICOLOR = 1;
       EDITOR = "hx";
     };
+
+    autosuggestion = {
+      enable = true;
+    };
   };
 }
