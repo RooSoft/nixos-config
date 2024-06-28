@@ -110,7 +110,10 @@
                 commonFolder = ./common;
               };
               users.roo = {
-                imports = [./machines/macOS/traveller/users/roo/home-manager];
+                imports = [
+                  roopkgs.nixosModules.home
+                  ./machines/macOS/traveller/users/roo/home-manager
+                ];
               };
             };
           }

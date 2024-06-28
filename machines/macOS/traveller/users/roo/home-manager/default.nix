@@ -24,6 +24,7 @@ in {
     tmux.enable = false;
     zellij.enable = true;
     starship.enable = true;
+    alacritty.enable = true;
   };
 
   home = {
