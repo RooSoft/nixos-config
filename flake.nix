@@ -18,6 +18,11 @@
     nvim-flake.url = "github:roosoft/nvim-flake";
 
     project-commander.url = "github:roosoft/project_commander";
+
+    roopkgs = {
+      url = "git+file:/Users/roo/work/test/roopkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -27,6 +32,7 @@
     flake-utils,
     darwin,
     nvim-flake,
+    roopkgs,
     ...
   } @ inputs: let
     pkgs_unstable = system:
@@ -71,7 +77,10 @@
                 commonFolder = ./common;
               };
               users.roo = {
-                imports = [./machines/macOS/builder/users/roo/home-manager];
+                imports = [
+                  roopkgs.nixosModules.home
+                  ./machines/macOS/builder/users/roo/home-manager
+                ];
               };
             };
           }

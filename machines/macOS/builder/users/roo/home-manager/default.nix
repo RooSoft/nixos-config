@@ -14,7 +14,6 @@
   zshModulePath = modulesFolder + "/zsh.nix";
 in {
   imports = [
-    ../../../../../../common/modules/eza.nix
     ../../../../../../common/modules/zellij
     starshipModulePath
     zshModulePath
@@ -23,6 +22,10 @@ in {
     ./atuin.nix
     ./alacritty
   ];
+
+  roopkgs.home = {
+    eza.enable = true;
+  };
 
   home = {
     stateVersion = "22.11";

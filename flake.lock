@@ -185,11 +185,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1719253556,
-        "narHash": "sha256-A/76RFUVxZ/7Y8+OMVL1Lc8LRhBxZ8ZE2bpMnvZ1VpY=",
+        "lastModified": 1719426051,
+        "narHash": "sha256-yJL9VYQhaRM7xs0M867ZFxwaONB9T2Q4LnGo1WovuR4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fc07dc3bdf2956ddd64f24612ea7fc894933eb2e",
+        "rev": "89c49874fb15f4124bf71ca5f42a04f2ee5825fd",
         "type": "github"
       },
       "original": {
@@ -263,11 +263,11 @@
     },
     "nixpkgs_unstable": {
       "locked": {
-        "lastModified": 1719075281,
-        "narHash": "sha256-CyyxvOwFf12I91PBWz43iGT1kjsf5oi6ax7CrvaMyAo=",
+        "lastModified": 1719254875,
+        "narHash": "sha256-ECni+IkwXjusHsm9Sexdtq8weAq/yUyt1TWIemXt3Ko=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a71e967ef3694799d0c418c98332f7ff4cc5f6af",
+        "rev": "2893f56de08021cffd9b6b6dfc70fd9ccd51eb60",
         "type": "github"
       },
       "original": {
@@ -318,6 +318,25 @@
         "type": "github"
       }
     },
+    "roopkgs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dirtyRev": "9a4d342ec17fcff0321f271acda1217d2eb66fff-dirty",
+        "dirtyShortRev": "9a4d342-dirty",
+        "lastModified": 1719507319,
+        "narHash": "sha256-RDXE/+7adLFl1rbkkR3BF0iEeqo5Mo0e7RBaIvDzQkg=",
+        "type": "git",
+        "url": "file:/Users/roo/work/test/roopkgs"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:/Users/roo/work/test/roopkgs"
+      }
+    },
     "root": {
       "inputs": {
         "darwin": "darwin",
@@ -326,7 +345,8 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs_unstable": "nixpkgs_unstable",
         "nvim-flake": "nvim-flake",
-        "project-commander": "project-commander"
+        "project-commander": "project-commander",
+        "roopkgs": "roopkgs"
       }
     },
     "systems": {
