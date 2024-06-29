@@ -68,8 +68,6 @@ in {
         nodePackages.http-server
         wasm-pack
 
-        zoxide
-
         lazygit
 
         alejandra
@@ -97,7 +95,6 @@ in {
       envExtra = ''
         export GPG_TTY=$(tty)
         pcd () {cd `pc --name=$1`}
-        eval "$(zoxide init zsh)"
       '';
       initExtra = ''
         eval "$(/opt/homebrew/bin/brew shellenv)"
