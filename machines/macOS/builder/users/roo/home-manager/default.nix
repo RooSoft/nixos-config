@@ -29,28 +29,54 @@ in {
     packages = with pkgs;
       (import defaultHomePackagesPath {pkgs = pkgs;})
       ++ [
+        # filesystem
         fd
+        minio-client
+
+        # network
         xh
         inetutils
-        btop
-        fzf
-        tldr
         magic-wormhole-rs
+        websocat
+        miniserve
+        nodePackages.http-server
+        irssi
+
+        # os
+        tldr
+
+        # programming
         gh
         delta
 
+        # productivity
         taskwarrior
-        diskonaut
-        bandwhich
 
+        # analytics
+        bandwhich
+        btop
+        diskonaut
+
+        # programming
+        unstable.just
+        iconv
+        lazygit
+        qrencode
+        zbar
+        wasm-pack
+        lldb
         nodejs_20
+        flyctl
+
+        # nix
+        alejandra
+
+        # elixir
         unstable.erlang
         unstable.elixir
         unstable.elixir_ls
-        pinentry_mac
-        libfido2
-        yubico-piv-tool
 
+        # rust
         unstable.rustc
         unstable.cargo
         unstable.cargo-watch
@@ -59,27 +85,11 @@ in {
         unstable.rust-analyzer
         unstable.rustfmt
         unstable.clippy
-        unstable.just
+
+        # security
+        libfido2
+        yubico-piv-tool
         secp256k1
-        iconv
-        websocat
-        qrencode
-        zbar
-        nodePackages.http-server
-        wasm-pack
-
-        lazygit
-
-        alejandra
-        lldb
-
-        miniserve
-
-        flyctl
-
-        irssi
-
-        minio-client
       ];
   };
 
