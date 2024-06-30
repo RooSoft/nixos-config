@@ -42,26 +42,19 @@
         config.allowUnfreePredicate = true;
       };
   in {
-    # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
-    nixosConfigurations = {
-      nixos-mini = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;}; # Pass flake inputs to our config
-        modules = [./machines/nixos-mini/configuration.nix];
-      };
-    };
-
     darwinConfigurations = {
       builder = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
+        
         pkgs = import nixpkgs {
           system = "aarch64-darwin";
         };
+
         specialArgs = {
           inherit inputs;
           modulesFolder = ./modules;
-        }; # Pass flake inputs to our config
-        # > Our main nixos configuration file <
+        };
+
         modules = [
           ./machines/macOS/builder/darwin-configuration.nix
           home-manager.darwinModules.home-manager
@@ -86,14 +79,16 @@
 
       traveller = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
+
         pkgs = import nixpkgs {
           system = "aarch64-darwin";
         };
+        
         specialArgs = {
           inherit inputs;
           modulesFolder = ./modules;
-        }; # Pass flake inputs to our config
-        # > Our main nixos configuration file <
+        };
+        
         modules = [
           ./machines/macOS/traveller/darwin-configuration.nix
           home-manager.darwinModules.home-manager
@@ -117,8 +112,13 @@
       };
     };
 
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
+    nixosConfigurations = {
+      nixos-mini = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;}; # Pass flake inputs to our config
+        modules = [./machines/nixos-mini/configuration.nix];
+      };
+    };
+
     homeConfigurations = let
       pkgs = pkgs_unstable "x86_64-linux";
     in {
