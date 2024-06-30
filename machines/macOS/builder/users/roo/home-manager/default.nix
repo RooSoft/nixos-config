@@ -26,14 +26,17 @@ in {
   home = {
     stateVersion = "22.11";
 
-    packages = with pkgs;
-      (import defaultHomePackagesPath {pkgs = pkgs;})
-      ++ [
+    packages = with pkgs; [
         # filesystem
         fd
+        tree
+        ripgrep
         minio-client
+        less
+        unrar-wrapper
 
         # network
+        curl
         xh
         inetutils
         magic-wormhole-rs
@@ -42,20 +45,20 @@ in {
         nodePackages.http-server
         irssi
 
-        # os
-        tldr
-
         # programming
         gh
+        jq
         delta
 
         # productivity
+        tldr
         taskwarrior
 
         # analytics
         bandwhich
         btop
         diskonaut
+        htop
 
         # programming
         unstable.just
@@ -90,6 +93,7 @@ in {
         libfido2
         yubico-piv-tool
         secp256k1
+        gnupg
       ];
   };
 
