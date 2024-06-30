@@ -34,6 +34,7 @@ in {
         minio-client
         less
         unrar-wrapper
+        yazi
 
         # network
         curl
