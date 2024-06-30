@@ -10,6 +10,12 @@
 in {
   imports = [
     ./git.nix
+    ./filesystem.nix
+    ./network.nix
+    ./programming
+    ./productivity.nix
+    ./analytics.nix
+    ./security.nix
   ];
 
   roopkgs.home = {
@@ -26,76 +32,7 @@ in {
   home = {
     stateVersion = "22.11";
 
-    packages = with pkgs; [
-        # filesystem
-        fd
-        tree
-        ripgrep
-        minio-client
-        less
-        unrar-wrapper
-        yazi
-
-        # network
-        curl
-        xh
-        inetutils
-        magic-wormhole-rs
-        websocat
-        miniserve
-        nodePackages.http-server
-        irssi
-
-        # programming
-        gh
-        jq
-        delta
-
-        # productivity
-        tldr
-        taskwarrior
-
-        # analytics
-        bandwhich
-        btop
-        diskonaut
-        htop
-
-        # programming
-        unstable.just
-        iconv
-        lazygit
-        qrencode
-        zbar
-        wasm-pack
-        lldb
-        nodejs_20
-        flyctl
-
-        # nix
-        alejandra
-
-        # elixir
-        unstable.erlang
-        unstable.elixir
-        unstable.elixir_ls
-
-        # rust
-        unstable.rustc
-        unstable.cargo
-        unstable.cargo-watch
-        unstable.cargo-generate
-        unstable.cargo-nextest
-        unstable.rust-analyzer
-        unstable.rustfmt
-        unstable.clippy
-
-        # security
-        libfido2
-        yubico-piv-tool
-        secp256k1
-        gnupg
-      ];
+    packages = with pkgs; [];
   };
 
   programs = {
