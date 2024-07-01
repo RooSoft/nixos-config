@@ -20,8 +20,8 @@
     project-commander.url = "github:roosoft/project_commander";
 
     roopkgs = {
-      url = "git+file:/Users/roo/work/test/roopkgs";
-      # url = "github:roosoft/roopkgs";
+      # url = "git+file:/Users/roo/work/test/roopkgs";
+      url = "github:roosoft/roopkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -114,7 +114,10 @@
 
     nixosConfigurations = {
       nixos-mini = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;}; # Pass flake inputs to our config
+        specialArgs = {
+          inherit inputs;
+          modulesFolder = ./common/modules;
+        };
         modules = [./machines/nixos-mini/configuration.nix];
       };
     };

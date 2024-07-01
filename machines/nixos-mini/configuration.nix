@@ -56,7 +56,9 @@
       enableSSHSupport = true;
     };
 
-    starship = import starshipModulePath {lib = lib;};
+    zsh.enable = true;
+
+    # starship = import starshipModulePath {lib = lib;};
   };
 
   # Some programs need SUID wrappers, can be configured further or are
