@@ -1,8 +1,14 @@
 {pkgs, ...} : {
   home.packages = with pkgs; [
+    # networking
     bandwhich
-    btop
+
+    #storage
     diskonaut
+
+    # process monitors
+    btop
+    bottom
     htop
   ];
 }
