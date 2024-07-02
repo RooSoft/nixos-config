@@ -1,13 +1,8 @@
 {
   pkgs,
-  unstable,
-  lib,
   commonFolder,
-  inputs,
   ...
-}: let
-  defaultHomePackagesPath = commonFolder + "/defaultHomePackages.nix";
-in {
+}: {
   imports = [
     ./git.nix
     ./filesystem.nix
