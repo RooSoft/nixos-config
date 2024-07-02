@@ -13,8 +13,6 @@
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    flake-utils.url = "github:numtide/flake-utils";
-
     nvim-flake.url = "github:roosoft/nvim-flake";
 
     project-commander.url = "github:roosoft/project_commander";
@@ -30,9 +28,7 @@
     nixpkgs,
     nixpkgs_unstable,
     home-manager,
-    flake-utils,
     darwin,
-    nvim-flake,
     roopkgs,
     ...
   } @ inputs: let

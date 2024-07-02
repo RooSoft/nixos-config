@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs; [
     tree-sitter
     wireguard-tools
+    deadnix
 
     inputs.nvim-flake.packages.aarch64-darwin.default
     inputs.project-commander.defaultPackage.aarch64-darwin
