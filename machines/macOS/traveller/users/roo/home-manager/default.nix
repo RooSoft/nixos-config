@@ -1,9 +1,7 @@
 {
   pkgs,
   unstable,
-  lib,
   commonFolder,
-  inputs,
   roopkgs,
   ...
 }: let
