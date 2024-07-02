@@ -111,28 +111,5 @@
         ];
       };
     };
-
-    nixosConfigurations = {
-      nixos-mini = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          modulesFolder = ./common/modules;
-        };
-        modules = [./machines/nixos-mini/configuration.nix];
-      };
-    };
-
-    homeConfigurations = let
-      pkgs = pkgs_unstable "x86_64-linux";
-    in {
-      "roo@nixos-mini" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        extraSpecialArgs = {
-          inherit inputs pkgs;
-          commonFolder = ./common;
-        };
-        modules = [./machines/nixos-mini/users/roo/home.nix];
-      };
-    };
   };
 }
