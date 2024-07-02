@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1719128254,
-        "narHash": "sha256-I7jMpq0CAOZA/i70+HDQO/ulLttyQu/K70cSESiMX7A=",
+        "lastModified": 1719845423,
+        "narHash": "sha256-ZLHDmWAsHQQKnmfyhYSHJDlt8Wfjv6SQhl2qek42O7A=",
         "owner": "lnl7",
         "repo": "nix-darwin",
-        "rev": "50581970f37f06a4719001735828519925ef8310",
+        "rev": "ec12b88104d6c117871fad55e931addac4626756",
         "type": "github"
       },
       "original": {
@@ -325,17 +325,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1719775474,
-        "narHash": "sha256-SjT8Bbq5KWU94dc6H8BkF1OxJ96v7mDfcbXdyceYv9o=",
-        "owner": "roosoft",
-        "repo": "roopkgs",
-        "rev": "abe1f32834e5bf1eef8de2243739836aabeff7f2",
-        "type": "github"
+        "dirtyRev": "78f3c3406a0629199ea7846ad635aefbdebfb8af-dirty",
+        "dirtyShortRev": "78f3c34-dirty",
+        "lastModified": 1719872707,
+        "narHash": "sha256-EUOIAwQZap921yRbIb9UzCE4WaoaQJiURaoeBH3F9QY=",
+        "type": "git",
+        "url": "file:/Users/roo/work/test/roopkgs"
       },
       "original": {
-        "owner": "roosoft",
-        "repo": "roopkgs",
-        "type": "github"
+        "type": "git",
+        "url": "file:/Users/roo/work/test/roopkgs"
       }
     },
     "root": {

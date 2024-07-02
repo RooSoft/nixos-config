@@ -27,6 +27,7 @@ in {
     zellij.enable = true;
     starship.enable = true;
     alacritty.enable = true;
+    dust.enable = true;
   };
 
   home = {
